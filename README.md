@@ -16,14 +16,14 @@ with the simulation results; that folder is typically located in `<simulation re
 you should look in `~/simulation/presized_OTA_tb/spectre/schematic/psf/`
 after completing the simulation.
 
-These files are typically in binary format. You can convert them to ascii with the 'psf' command from cadence; run:
-
+These files are typically in binary format. You can convert them to ascii with the `psf` command from cadence; run:
+```
 psf dcOPInfo.info dcOPInfo.info.ascii
 psf element.info element.info.ascii
+```
+Those ascii files can be read by the script. There are example files in the [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) folder. 
 
-Those ascii files can be read by the script. There are example files in the [example_files_presized_OTA_tb](example_files_presized_OTA_tb) folder. 
-
-You further need to make a dictionary of the devices you want the script to display the operating point. The format is:
+You further need to make a dictionary of the devices in a json file you want the script to display the operating point. The format is:
 
 ```
 {"device1_label_used_by_script": "spectre_reference_of_device1",
@@ -40,8 +40,9 @@ So, for example, the following dictionary names I7.M1, i.e. the M1 device in sub
  "M4": "I7.M4",
  "M5": "I7.M5"}
 ```
-
-There is are examples in the example_files_presized_OTA_tb folder:
+There is are examples in the
+[example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) folder:
+e.g., [devices.json](example_files_presized_OTA_tb/devices.json) 
 
 ## Tools Needed
 - python 3
