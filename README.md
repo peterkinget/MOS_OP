@@ -3,15 +3,17 @@
 ## Basic Usage
 The python script MOS_Operating_Point.py takes in simulation results from a spectre operating point simulation and tabulates them nicely on the terminal and saves them in a csv file.
 
-Usage: `MOS_Operating_Point.py <name dcOPInfo.info ascii file> <name
+Usage: 
+
+`MOS_Operating_Point.py <name dcOPInfo.info ascii file> <name
 element.info ascii file> <json file with device name dictionary>`
 
 After a spectre DC Analysis with 'Save Operating Point', spectre will
 save the operating point information in the `dcOPInfo.info` file and the
 transistor sizing information in the `element.info` file in the folder
 with the simulation results; that folder is typically located in `<simulation results folder>/<name of the cell>/spectre/schematic/psf/`. So if you are simulating
-'presized_OTA_tb' and you save your simulation results in ~/simulation,
-you should look in ~/simulation/presized_OTA_tb/spectre/schematic/psf
+`presized_OTA_tb`  and you save your simulation results in `~/simulation`,
+you should look in `~/simulation/presized_OTA_tb/spectre/schematic/psf/`
 after completing the simulation.
 
 These files are typically in binary format. You can convert them to ascii with the 'psf' command from cadence; run:
@@ -19,7 +21,7 @@ These files are typically in binary format. You can convert them to ascii with t
 psf dcOPInfo.info dcOPInfo.info.ascii
 psf element.info element.info.ascii
 
-Those ascii files can be read by the script. There are example files in the example_files_presized_OTA_tb folder. 
+Those ascii files can be read by the script. There are example files in the [example_files_presized_OTA_tb](example_files_presized_OTA_tb) folder. 
 
 You further need to make a dictionary of the devices you want the script to display the operating point. The format is:
 
