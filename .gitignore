@@ -3,3 +3,6 @@
 .ipynb_checkpoints
 *.cache
 TRASH/
+older_versions/
+.psf_file
+.psf_*
