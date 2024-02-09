@@ -1,5 +1,16 @@
 # OP_Sandbox
 
+## Quick Start
+- clone the repository
+- start a terminal
+- install `psf_utils` with `pip3 install psf_utils`
+- go into the example files of the repository: `cd example_files_presized_OTA_tb`
+- execute the script with the example files: `../MOS_Operating_Point_v0.1d.py dcOpInfo.info.ascii
+  element.info.ascii device_names_all.json`
+- check out your terminal  and `operating_point.csv`
+- execute the script with another shorter example: `../MOS_Operating_Point_v0.1d.py dcOpInfo.info.ascii
+  element.info.ascii device_names_I0.json`
+  
 ## Basic Usage
 The python script MOS_Operating_Point.py takes in simulation results from a spectre operating point simulation and tabulates them nicely on the terminal and saves them in a csv file.
 
