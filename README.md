@@ -13,7 +13,7 @@
 - This is the [output](img/example_output.md) you should obtain. 
   
 ## Basic Usage
-The python script MOS_Operating_Point.py takes in simulation results from a spectre operating point simulation and tabulates them nicely on the terminal and saves them in a csv file.
+The python script `MOS_Operating_Point.py` takes in simulation results from a spectre operating point simulation and tabulates them nicely on the terminal and saves them in a csv file.
 
 Usage: 
 

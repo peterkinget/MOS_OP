@@ -3,7 +3,7 @@
 .ipynb_checkpoints
 *.cache
 TRASH/
-older_versions/
+old_versions/
 .psf_file
 .psf_*
 *~
