@@ -54,7 +54,7 @@ So, for example, the following dictionary names I7.M1, i.e. the M1 device in sub
 ```
 There is are examples in the
 [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) folder:
-e.g., [devices.json](example_files_presized_OTA_tb/devices_all.json) 
+e.g., [device_names.json](example_files_presized_OTA_tb/device_names_all.json) 
 
 ## Tools Needed
 - `python 3`
