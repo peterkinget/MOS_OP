@@ -1,0 +1,2812 @@
+HEADER
+"PSFversion" "1.00"
+"BINPSF creation time" "1702001119"
+"simulator" "spectre"
+"version" "21.1.0.460.isr10"
+"date" "9:05:18 PM, Thur Dec 7, 2023"
+"design" "// Generated for: spectre"
+"analysis type" "info"
+"analysis name" "element"
+"analysis description" "Circuit Information"
+"xVecSorted" "unknown"
+"tolerance.relative" 0.00100000
+TYPE
+"bsim3v3~instparams" STRUCT(
+"w" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Channel width"
+)
+"l" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Channel length"
+)
+"as" FLOAT DOUBLE PROP(
+"units" "m^2"
+"description" "Area of source diffusion"
+)
+"ad" FLOAT DOUBLE PROP(
+"units" "m^2"
+"description" "Area of drain diffusion"
+)
+"ps" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Perimeter of source diffusion"
+)
+"pd" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Perimeter of drain diffusion"
+)
+"nrd" FLOAT DOUBLE PROP(
+"units" "m/m"
+"description" "Number of squares of drain diffusion"
+)
+"nrs" FLOAT DOUBLE PROP(
+"units" "m/m"
+"description" "Number of squares of source diffusion"
+)
+"m" FLOAT DOUBLE PROP(
+"description" "Multiplicity factor (number of MOSFETs in parallel)"
+)
+"trise" FLOAT DOUBLE PROP(
+"units" "C"
+"description" "Temperature rise from ambient"
+)
+"aforward" FLOAT DOUBLE PROP(
+"description" "Forward gate leakage current coefficient"
+)
+"areverse" FLOAT DOUBLE PROP(
+"description" "Reverse gate leakage current coefficient"
+)
+"delvto" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "shift in zero-bias threshold voltage vth0"
+)
+"mulmu0" FLOAT DOUBLE PROP(
+"description" "mobility multiplier"
+)
+"mulu0" FLOAT DOUBLE PROP(
+"description" "mobility multiplier"
+)
+"delk1" FLOAT DOUBLE PROP(
+"units" "sqrt(V)"
+"description" "shift in body bias coefficient k1"
+)
+"delnfct" FLOAT DOUBLE PROP(
+"description" "shift in subthreshold swing factor nfactor"
+)
+"rdc" FLOAT DOUBLE PROP(
+"description" "Drain contact resistance"
+)
+"rsc" FLOAT DOUBLE PROP(
+"description" "Source contact resistance"
+)
+"sa" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of one side"
+)
+"sb" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of the other side"
+)
+"sa1" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of one side 1"
+)
+"sa2" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of one side 2"
+)
+"sa3" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of one side 3"
+)
+"sa4" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of one side 4"
+)
+"sa5" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of one side 5"
+)
+"sa6" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of one side 6"
+)
+"sa7" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of one side 7"
+)
+"sa8" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of one side 8"
+)
+"sa9" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of one side 9"
+)
+"sa10" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of one side 10"
+)
+"sb1" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of the other side 1"
+)
+"sb2" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of the other side 2"
+)
+"sb3" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of the other side 3"
+)
+"sb4" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of the other side 4"
+)
+"sb5" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of the other side 5"
+)
+"sb6" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of the other side 6"
+)
+"sb7" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of the other side 7"
+)
+"sb8" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of the other side 8"
+)
+"sb9" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of the other side 9"
+)
+"sb10" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Distance between OD edge to poly of the other side 10"
+)
+"sw1" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Width of SA1/SB1"
+)
+"sw2" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Width of SA2/SB2"
+)
+"sw3" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Width of SA3/SB3"
+)
+"sw4" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Width of SA4/SB4"
+)
+"sw5" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Width of SA5/SB5"
+)
+"sw6" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Width of SA6/SB6"
+)
+"sw7" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Width of SA7/SB7"
+)
+"sw8" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Width of SA8/SB8"
+)
+"sw9" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Width of SA9/SB9"
+)
+"sw10" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Width of SA10/SB10"
+)
+"sca" FLOAT DOUBLE PROP(
+"description" " Integral of the first distribution function for scattered well dopant"
+)
+"scb" FLOAT DOUBLE PROP(
+"description" "Integral of the second distribution function for scattered well dopant"
+)
+"scc" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Integral of the third distribution function for scattered well dopant"
+)
+"sc" FLOAT DOUBLE PROP(
+"units" "m"
+"description" " Distance to a single well edge "
+)
+"mulid0" FLOAT DOUBLE PROP(
+"description" "Ids multiplier"
+)
+"mulbeta" FLOAT DOUBLE PROP(
+"description" "Beta multiplier"
+)
+"nqsmod" INT LONG PROP(
+"description" "NQS flag"
+)
+"acnqsmod" INT LONG PROP(
+"description" "AC NQS flag"
+)
+"geo" INT LONG PROP(
+"description" "Geometry selector"
+)
+"stimod" INT LONG PROP(
+"description" "LOD stress effect model selector"
+)
+"region" INT BYTE PROP(
+"description" "Estimated operating region. Spectre outputs number (0-4) in a rawfile"
+)
+"isnoisy" INT BYTE PROP(
+"description" "Should device generate noise"
+)
+) PROP(
+"key" "inst"
+)
+"capacitor~instparams" STRUCT(
+"c" FLOAT DOUBLE PROP(
+"units" "F"
+"description" "Capacitance"
+)
+"w" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Capacitor width"
+)
+"l" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Capacitor length"
+)
+"m" FLOAT DOUBLE PROP(
+"description" "Multiplicity factor"
+)
+"scale" FLOAT DOUBLE PROP(
+"description" "Scale factor"
+)
+"trise" FLOAT DOUBLE PROP(
+"units" "C"
+"description" "Temperature rise from ambient"
+)
+"tc1" FLOAT DOUBLE PROP(
+"units" "1/C"
+"description" "Linear temperature coefficient"
+)
+"tc2" FLOAT DOUBLE PROP(
+"units" "C^-2"
+"description" "Quadratic temperature coefficient"
+)
+"ic" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Initial condition(alias=lv2)"
+)
+"area" FLOAT DOUBLE PROP(
+"units" "m^2"
+"description" "Capacitor area"
+)
+"perim" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "Capacitor perimeter"
+)
+"bv_max" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Maximum allowed voltage cross two terminals"
+)
+"scalec" FLOAT DOUBLE PROP(
+"description" "Capacitance scaling factor"
+)
+"bv_min" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Minimum allowed voltage cross two terminals"
+)
+"symmetric" INT BYTE PROP(
+"description" "Use symmetric capacitor model"
+)
+) PROP(
+"key" "inst"
+)
+"inductor~instparams" STRUCT(
+"l" FLOAT DOUBLE PROP(
+"units" "H"
+"description" "Inductance value"
+)
+"r" FLOAT DOUBLE PROP(
+"units" "Ohm"
+"description" "Resistance value"
+)
+"m" FLOAT DOUBLE PROP(
+"description" "Multiplicity factor"
+)
+"trise" FLOAT DOUBLE PROP(
+"units" "C"
+"description" "Temperature rise from ambient"
+)
+"ic" FLOAT DOUBLE PROP(
+"units" "A"
+"description" "Initial condition (alias=lv2)"
+)
+"tc1" FLOAT DOUBLE PROP(
+"units" "1/C"
+"description" "Linear temperature coefficient"
+)
+"tc2" FLOAT DOUBLE PROP(
+"units" "C^-2"
+"description" "Quadratic temperature coefficient"
+)
+"scalei" FLOAT DOUBLE PROP(
+"description" "Inductance scaling factor"
+)
+"q" FLOAT DOUBLE PROP(
+"description" "Quality factor measured at the frequency 'fq'"
+)
+"fq" FLOAT DOUBLE PROP(
+"units" "Hz"
+"description" "Frequency at which 'l' and 'q' are measured"
+)
+"rdc" FLOAT DOUBLE PROP(
+"units" "Ohm"
+"description" "DC resistance used in mode=2 and mode=3"
+)
+"alph" FLOAT DOUBLE PROP(
+"description" "Scaling factor for Q in 'indq', qf=q*(freq/fq)^alph, Z=2*pi*freq*L*(1/qf+j)"
+)
+"mode" INT LONG PROP(
+"description" "Integer parameter used in 'indq' model"
+)
+"isnoisy" INT BYTE PROP(
+"description" "Should inductor resistance generate noise"
+)
+"symmetric" INT BYTE PROP(
+"description" "Use symmetric inductor model"
+)
+) PROP(
+"key" "inst"
+)
+"isource~instparams" STRUCT(
+"dc" FLOAT DOUBLE PROP(
+"units" "A"
+"description" "DC value"
+)
+"delay" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Waveform delay time"
+)
+"val0" FLOAT DOUBLE PROP(
+"units" "A"
+"description" "Zero value used in pulse and exponential waveforms"
+)
+"val1" FLOAT DOUBLE PROP(
+"units" "A"
+"description" "One value used in pulse and exponential waveforms"
+)
+"period" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Period of waveform. When type=prbs, period defines the bit duration"
+)
+"rise" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Rise time for pulse waveform (time for transition from `val0' to `val1'). If the rise parameter is not specified, the rise time is the same as fall time. If fall time is also not specified, the rise time is 1/100 of the waveform period. If the waveform is not periodic, the rise time is 1/100 of the simulation interval. If type=prbs, the rise time is 1/10 of the bit duration"
+)
+"fall" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Fall time for pulse waveform (time for transition from `val1' to `val0'). If the fall parameter is not specified, the fall time is the same as rise time. If the rise time is also not specified, the fall time is 1/100 of the waveform period. If the waveform is not periodic, the fall time is 1/100 of the simulation interval; if type=prbs, the fall time is 1/10 of the bit duration"
+)
+"width" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Pulse width (duration of `val1')"
+)
+"offset" FLOAT DOUBLE PROP(
+"units" "A"
+"description" "DC offset for the PWL waveform"
+)
+"scale" FLOAT DOUBLE PROP(
+"description" "Scale factor for the PWL waveform"
+)
+"stretch" FLOAT DOUBLE PROP(
+"description" "Scale factor for time given for the PWL waveform"
+)
+"rms" FLOAT DOUBLE PROP(
+"description" "Desired rms (root of mean square) value of the PWL waveform"
+)
+"rolloff" FLOAT DOUBLE PROP(
+"description" "Desired rolloff factor for the raised cosine filter. The default value is 0.2. This parameter is valid only when 'pwlfilter' is set to nrc"
+)
+"pwlbandwidth" FLOAT DOUBLE PROP(
+"description" "Bandwidth of the pwl input signal. This parameter is used when 'pwlfilter' is set to nrc"
+)
+"pwlperiod" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Period of the periodic PWL waveform"
+)
+"pwlperiodstart" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Period start time of the periodic PWL waveform"
+)
+"pwlperiodstop" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Period stop time of the periodic PWL waveform"
+)
+"pwlperiodstopvalue" FLOAT DOUBLE PROP(
+"description" "value of the source at the time of pwlperiodstop"
+)
+"pwlperiodstopslope" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "switching time from the last PWL value to the stopvalue"
+)
+"twidth" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Transition width used when making PWL waveforms periodic"
+)
+"tdvalue" FLOAT DOUBLE PROP(
+"description" "PWL wave value before time=td."
+)
+"sinedc" FLOAT DOUBLE PROP(
+"units" "A"
+"description" "DC level for sinusoidal waveforms"
+)
+"ampl" FLOAT DOUBLE PROP(
+"units" "A"
+"description" "Amplitude of sinusoidal waveform"
+)
+"freq" FLOAT DOUBLE PROP(
+"units" "Hz"
+"description" "Frequency of sinusoidal waveform"
+)
+"sinephase" FLOAT DOUBLE PROP(
+"units" "Deg"
+"description" "Phase of sinusoid when `t=delay'"
+)
+"ampl2" FLOAT DOUBLE PROP(
+"units" "A"
+"description" "Amplitude of second sinusoidal waveform"
+)
+"freq2" FLOAT DOUBLE PROP(
+"units" "Hz"
+"description" "Frequency of second sinusoidal waveform"
+)
+"sinephase2" FLOAT DOUBLE PROP(
+"units" "Deg"
+"description" "Phase of second sinusoid when `t=delay'"
+)
+"fmmodindex" FLOAT DOUBLE PROP(
+"description" "FM index of modulation for sinusoidal waveform"
+)
+"fmmodfreq" FLOAT DOUBLE PROP(
+"units" "Hz"
+"description" "FM modulation frequency for sinusoidal waveform"
+)
+"ammodindex" FLOAT DOUBLE PROP(
+"description" "AM index of modulation for sinusoidal waveform"
+)
+"ammodoffset" FLOAT DOUBLE PROP(
+"description" "AM offset of modulation for sinusoidal waveform"
+)
+"ammodfreq" FLOAT DOUBLE PROP(
+"units" "Hz"
+"description" "AM modulation frequency for sinusoidal waveform"
+)
+"ammodphase" FLOAT DOUBLE PROP(
+"units" "Deg"
+"description" "AM phase of modulation for sinusoidal waveform"
+)
+"damp" FLOAT DOUBLE PROP(
+"units" "1/s"
+"description" "Damping factor for sinusoidal waveform"
+)
+"td1" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Rise start time for exponential wave"
+)
+"tau1" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Rise time constant for exponential wave"
+)
+"td2" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Fall start time for exponential wave"
+)
+"tau2" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Fall time constant for exponential wave"
+)
+"expperiod" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Period of the periodic exponential waveform"
+)
+"td01" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Time delay for 0 to 1 transition"
+)
+"td10" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Time delay for 1 to 0 transition"
+)
+"ref" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Sets the crossing reference for the control node. This parameter applies only when the Prbs source operates as a 3- or a 4- terminal device. When the voltage across terminals 3 and 4 drops below ref, the output of the source is set to 0. If terminal 4 is not specified, it is assumed to be connected to ground"
+)
+"jitter" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "The parameter jitter is obsolete. It has no effect on the output"
+)
+"rjrms" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "When set for PRBS/Bit source, the source has a normally distributed random jitter whose mean is zero and standard deviation is rjrms"
+)
+"triggerthreshold" FLOAT DOUBLE PROP(
+"units" "A"
+"description" "For PRBS, when the triggerthreshold parameter is set and the source is instantiated with optional control terminals (terminals 3 and 4; if terminal 4 is unspecified it is assumed to be connected to ground), the parameter defines the crossing threshold for the trigger event. The event causes the emission of the next PRBS pulse"
+)
+"triggerdelthresh" FLOAT DOUBLE PROP(
+"units" "A"
+"description" "For PRBS in external triggering mode, the triggerdelthresh parameter is used with the triggerthreshold parameter to define the crossing threshold. For rising edge triggering, the actual threshold is (triggerthreshold + triggerdelthresh); for falling edge triggering, the threshold is (triggerthreshold - triggerdelthresh). The default value is zero"
+)
+"transitionreference" FLOAT DOUBLE PROP(
+"description" "Defines the voltage swing for the duration of rise and fall time as a percentage of val1 - val0. For example, transitionreference =100 means that the output voltage transitions from val0 to val1 in rise seconds. 90 means that it transitions from 0.1*(val1-val0) to 0.9*(val1-val0) in rise seconds, 80 means that it transitions from 0.2*(val1-val0) to 0.8*(val1-val0) in rise seconds, and so on. Possible values are 100, 90, 80, 70 and 60"
+)
+"freqscale" FLOAT DOUBLE PROP(
+"description" "Frequency scale factor"
+)
+"amplscale" FLOAT DOUBLE PROP(
+"description" "Amplitude scale factor"
+)
+"mag" FLOAT DOUBLE PROP(
+"units" "A"
+"description" "Small signal current"
+)
+"phase" FLOAT DOUBLE PROP(
+"units" "Deg"
+"description" "Small signal phase"
+)
+"xfmag" FLOAT DOUBLE PROP(
+"units" "A/A"
+"description" "Transfer function analysis magnitude"
+)
+"pacmag" FLOAT DOUBLE PROP(
+"units" "A"
+"description" "Periodic AC analysis magnitude"
+)
+"pacphase" FLOAT DOUBLE PROP(
+"units" "Deg"
+"description" "Periodic AC analysis phase"
+)
+"m" FLOAT DOUBLE PROP(
+"description" "Multiplicity factor"
+)
+"tc1" FLOAT DOUBLE PROP(
+"units" "1/C"
+"description" "First order temperature coefficient"
+)
+"tc2" FLOAT DOUBLE PROP(
+"units" "C^-2"
+"description" "Second order temperature coefficient"
+)
+"tnom" FLOAT DOUBLE PROP(
+"units" "C"
+"description" "Parameter measurement temperature. The default value is set by the options statement"
+)
+"trise" FLOAT DOUBLE PROP(
+"units" "C"
+"description" "Temperature rise from ambient"
+)
+"rptstart" INT LONG PROP(
+"description" "The starting bit when repeating. The data repeats from the specified bit to the end of the bit string. The parameter should be an integer from 1 to the length of the bit string"
+)
+"rpttimes" INT LONG PROP(
+"description" "The repeat times. The output maintains the state of the last bit after the last repeat. If its value is negative, the string repeats forever"
+)
+"rjseed" INT LONG PROP(
+"description" "The seed for random number generator, which is used in generating random jitter for PRBS/Bit sources. The default value is 1"
+)
+"seed" INT LONG PROP(
+"description" "This parameter is obsolete, however, is retained for backward compatibility. Set registerlength=[2 ... 32] to choose a Maximum Length Sequence or define a custom PRBS by using the lfsrtaps and lfsrseed parameters"
+)
+"registerlength" INT LONG PROP(
+"description" "When set for PRBS, the registerlength parameter defines the width of the LFSR that works in the Maximum Length Sequence mode. For more information about MLS setting, see the 'PRBS Type Waveform' section"
+)
+"type" INT BYTE PROP(
+"description" "Waveform type"
+)
+"edgetype" INT BYTE PROP(
+"description" "Type of rising and falling edges; effective for pulse, pulse-like piecewise linear, bit, and prbs sources"
+)
+"pwlfilter" INT BYTE PROP(
+"description" "Add filter for pwl source, where the pwl data should be equal space sampled. Possible values are 'nrc'(normal raised cosine filter) and 'none'"
+)
+"allbrkpts" INT BYTE PROP(
+"description" "If set to yes, all the points in the PWL waveform are breakpoints. Default is yes if the number of points is less than 20"
+)
+"modulation" INT BYTE PROP(
+"description" "Type of amplitude modulation; effective for bit and prbs sources"
+)
+"noisetype" INT BYTE PROP(
+"description" "Noisetype parameter specifies the units and source of noise data. When this parameter is set to noisevoltage, the noise data represents the noise spectral density in V^2/Hz of noise measured at the output of a driven circuit. When set to ssbphasenoise, the noise data represents the single-sideband phase noise in dBc measured at the output of a free oscillator.When set to edgephasenoise, the noise data represents the single-sideband phase noise in dBc measured at the output of a driven or oscillator circuit in sampled pnoise/hbnoise jitter analysis. For noisetype=noisevoltage, the frequencies are taken as absolute. For ssbphasenoise and edgephasenoise, the frequencies are offset from the carrier.Note that Noisetype=edgephasenoise is tied to a specific sampling edge position and should be used only for simulating jitter at that given edge position.Noisetype=ssbphasenoise can be used only with pnoise, qpnoise, hbnoise analyses, the noise source will be ignored in transient noise and AC noise analyses"
+)
+"noiseinterp" INT BYTE PROP(
+"description" "Determines how the specified noise data is interpolated. This parameter only applies to noisetype=noisevoltage. When set to linear, interpolation is linear over both axes. When set to loglog, Spectre uses log interpolation over both axes"
+)
+"isnoisy" INT BYTE PROP(
+"description" "Should isource generate noise"
+)
+) PROP(
+"key" "inst"
+)
+"resistor~instparams" STRUCT(
+"r" FLOAT DOUBLE PROP(
+"units" "Ohm"
+"description" "Resistance"
+)
+"l" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "The length of the resistor"
+)
+"w" FLOAT DOUBLE PROP(
+"units" "m"
+"description" "The width of the resistor"
+)
+"m" FLOAT DOUBLE PROP(
+"description" "Multiplicity factor"
+)
+"scale" FLOAT DOUBLE PROP(
+"description" "Scale factor"
+)
+"tc1" FLOAT DOUBLE PROP(
+"units" "1/C"
+"description" "Linear temperature coefficient(alias=lv3,tc1r)"
+)
+"tc1r" FLOAT DOUBLE PROP(
+"units" "1/C"
+"description" "Alias for tc1"
+)
+"tc2" FLOAT DOUBLE PROP(
+"units" "C^-2"
+"description" "Quadratic temperature coefficient(alias=lv4,tc2r)"
+)
+"tc2r" FLOAT DOUBLE PROP(
+"units" "C^-2"
+"description" "Alias for tc2"
+)
+"trise" FLOAT DOUBLE PROP(
+"units" "C"
+"description" "Temperature rise from ambient"
+)
+"bv_max" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Maximum allowed voltage across two terminals"
+)
+"c" FLOAT DOUBLE PROP(
+"units" "F"
+"description" "Capacitance"
+)
+"tc1c" FLOAT DOUBLE PROP(
+"units" "1/C"
+"description" "Linear temperature coefficient of capacitor"
+)
+"tc2c" FLOAT DOUBLE PROP(
+"units" "C^-2"
+"description" "Quadratic temperature coefficient of capacitor"
+)
+"rac" FLOAT DOUBLE PROP(
+"units" "Ohm"
+"description" "Default AC resistance, (alias=ac)"
+)
+"scaler" FLOAT DOUBLE PROP(
+"description" "Resistance scaling factor"
+)
+"scalec" FLOAT DOUBLE PROP(
+"description" "Capacitance scaling factor"
+)
+"dtemp" FLOAT DOUBLE PROP(
+"units" "C"
+"description" "Alias of Temperature rise from ambient"
+)
+"cap" FLOAT DOUBLE PROP(
+"units" "F"
+"description" "Alias of capacitance"
+)
+"lvl" INT LONG PROP(
+"description" "The metal layer of the resistor"
+)
+"resform" INT BYTE PROP(
+"description" "Use the resistance form for this instance.  Default is `yes' if `r < thresh'"
+)
+"isnoisy" INT BYTE PROP(
+"description" "Determines if the device should generate noise"
+)
+) PROP(
+"key" "inst"
+)
+"vcvs~instparams" STRUCT(
+"m" FLOAT DOUBLE PROP(
+"description" "Multiplicity factor"
+)
+"delta" FLOAT DOUBLE PROP(
+"description" "Smoothing parameter. This parameter can lead to circuit convergency. Its value should be between 0 and 0.5, both ends included. The smaller the delta is, the sharper the corner is"
+)
+"gain" FLOAT DOUBLE PROP(
+"units" "V/V"
+"description" "Voltage gain"
+)
+"td" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Time delay"
+)
+"min" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Minimum output voltage"
+)
+"max" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Maximum output voltage"
+)
+"scale" FLOAT DOUBLE PROP(
+"description" "Scale factor for the PWL output voltage"
+)
+"stretch" FLOAT DOUBLE PROP(
+"description" "Scale factor for the PWL controlling voltage"
+)
+"tc1" FLOAT DOUBLE PROP(
+"units" "1/C"
+"description" "Linear temperature coefficient"
+)
+"tc2" FLOAT DOUBLE PROP(
+"units" "C^-2"
+"description" "Quadratic temperature coefficient"
+)
+"trise" FLOAT DOUBLE PROP(
+"units" "K"
+"description" "Temperature rise from ambient"
+)
+"type" INT BYTE PROP(
+"description" "Type of the source"
+)
+"abs" INT BYTE PROP(
+"description" "When abs is set to on, the output voltage is an absolute value"
+)
+) PROP(
+"key" "inst"
+)
+"vsource~instparams" STRUCT(
+"dc" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "DC value"
+)
+"delay" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Waveform delay time"
+)
+"val0" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Zero value used in pulse and exponential waveforms"
+)
+"val1" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "One value used in pulse and exponential waveforms"
+)
+"period" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Period of waveform. When type=prbs, period defines the bit duration"
+)
+"rise" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Rise time for pulse waveform (time for transition from `val0' to `val1'). If the rise parameter is not specified, the rise time is the same as fall time. If fall time is also not specified, the rise time is 1/100 of the waveform period. If the waveform is not periodic, the rise time is 1/100 of the simulation interval. If type=prbs, the rise time is 1/10 of the bit duration"
+)
+"fall" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Fall time for pulse waveform (time for transition from `val1' to `val0'). If the fall parameter is not specified, the fall time is the same as rise time. If the rise time is also not specified, the fall time is 1/100 of the waveform period. If the waveform is not periodic, the fall time is 1/100 of the simulation interval; if type=prbs, the fall time is 1/10 of the bit duration"
+)
+"width" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Pulse width (duration of `val1')"
+)
+"offset" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "DC offset for the PWL waveform"
+)
+"scale" FLOAT DOUBLE PROP(
+"description" "Scale factor for the PWL waveform"
+)
+"stretch" FLOAT DOUBLE PROP(
+"description" "Scale factor for time given for the PWL waveform"
+)
+"rms" FLOAT DOUBLE PROP(
+"description" "Desired rms (root of mean square) value of the PWL waveform"
+)
+"rolloff" FLOAT DOUBLE PROP(
+"description" "Desired rolloff factor for the raised cosine filter. The default value is 0.2. This parameter is valid only when 'pwlfilter' is set to nrc"
+)
+"pwlbandwidth" FLOAT DOUBLE PROP(
+"description" "Bandwidth of the pwl input signal. This parameter is used when 'pwlfilter' is set to nrc"
+)
+"pwlperiod" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Period of the periodic PWL waveform"
+)
+"pwlperiodstart" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Period start time of the periodic PWL waveform"
+)
+"pwlperiodstop" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Period stop time of the periodic PWL waveform"
+)
+"pwlperiodstopvalue" FLOAT DOUBLE PROP(
+"description" "value of the source at the time of pwlperiodstop"
+)
+"pwlperiodstopslope" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "switching time from the last PWL value to the stopvalue"
+)
+"twidth" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Transition width used when making PWL waveforms periodic"
+)
+"tdvalue" FLOAT DOUBLE PROP(
+"description" "PWL wave value before time=td."
+)
+"sinedc" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "DC level for sinusoidal waveforms"
+)
+"ampl" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Amplitude of sinusoidal waveform"
+)
+"freq" FLOAT DOUBLE PROP(
+"units" "Hz"
+"description" "Frequency of sinusoidal waveform"
+)
+"sinephase" FLOAT DOUBLE PROP(
+"units" "Deg"
+"description" "Phase of sinusoid when `t=delay'"
+)
+"ampl2" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Amplitude of second sinusoidal waveform"
+)
+"freq2" FLOAT DOUBLE PROP(
+"units" "Hz"
+"description" "Frequency of second sinusoidal waveform"
+)
+"sinephase2" FLOAT DOUBLE PROP(
+"units" "Deg"
+"description" "Phase of second sinusoid when `t=delay'"
+)
+"fmmodindex" FLOAT DOUBLE PROP(
+"description" "FM index of modulation for sinusoidal waveform"
+)
+"fmmodfreq" FLOAT DOUBLE PROP(
+"units" "Hz"
+"description" "FM modulation frequency for sinusoidal waveform"
+)
+"ammodindex" FLOAT DOUBLE PROP(
+"description" "AM index of modulation for sinusoidal waveform"
+)
+"ammodoffset" FLOAT DOUBLE PROP(
+"description" "AM offset of modulation for sinusoidal waveform"
+)
+"ammodfreq" FLOAT DOUBLE PROP(
+"units" "Hz"
+"description" "AM modulation frequency for sinusoidal waveform"
+)
+"ammodphase" FLOAT DOUBLE PROP(
+"units" "Deg"
+"description" "AM phase of modulation for sinusoidal waveform"
+)
+"damp" FLOAT DOUBLE PROP(
+"units" "1/s"
+"description" "Damping factor for sinusoidal waveform"
+)
+"td1" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Rise start time for exponential wave"
+)
+"tau1" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Rise time constant for exponential wave"
+)
+"td2" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Fall start time for exponential wave"
+)
+"tau2" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Fall time constant for exponential wave"
+)
+"expperiod" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Period of the periodic exponential waveform"
+)
+"td01" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Time delay for 0 to 1 transition"
+)
+"td10" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "Time delay for 1 to 0 transition"
+)
+"ref" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Sets the crossing reference for the control node. This parameter applies only when the Prbs source operates as a 3- or a 4- terminal device. When the voltage across terminals 3 and 4 drops below ref, the output of the source is set to 0. If terminal 4 is not specified, it is assumed to be connected to ground"
+)
+"jitter" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "The parameter jitter is obsolete. It has no effect on the output"
+)
+"rjrms" FLOAT DOUBLE PROP(
+"units" "s"
+"description" "When set for PRBS/Bit source, the source has a normally distributed random jitter whose mean is zero and standard deviation is rjrms"
+)
+"triggerthreshold" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "For PRBS, when the triggerthreshold parameter is set and the source is instantiated with optional control terminals (terminals 3 and 4; if terminal 4 is unspecified it is assumed to be connected to ground), the parameter defines the crossing threshold for the trigger event. The event causes the emission of the next PRBS pulse"
+)
+"triggerdelthresh" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "For PRBS in external triggering mode, the triggerdelthresh parameter is used with the triggerthreshold parameter to define the crossing threshold. For rising edge triggering, the actual threshold is (triggerthreshold + triggerdelthresh); for falling edge triggering, the threshold is (triggerthreshold - triggerdelthresh). The default value is zero"
+)
+"transitionreference" FLOAT DOUBLE PROP(
+"description" "Defines the voltage swing for the duration of rise and fall time as a percentage of val1 - val0. For example, transitionreference =100 means that the output voltage transitions from val0 to val1 in rise seconds. 90 means that it transitions from 0.1*(val1-val0) to 0.9*(val1-val0) in rise seconds, 80 means that it transitions from 0.2*(val1-val0) to 0.8*(val1-val0) in rise seconds, and so on. Possible values are 100, 90, 80, 70 and 60"
+)
+"freqscale" FLOAT DOUBLE PROP(
+"description" "Frequency scale factor"
+)
+"amplscale" FLOAT DOUBLE PROP(
+"description" "Amplitude scale factor"
+)
+"mag" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Small signal voltage"
+)
+"phase" FLOAT DOUBLE PROP(
+"units" "Deg"
+"description" "Small signal phase"
+)
+"xfmag" FLOAT DOUBLE PROP(
+"units" "V/V"
+"description" "Transfer function analysis magnitude"
+)
+"pacmag" FLOAT DOUBLE PROP(
+"units" "V"
+"description" "Periodic AC analysis magnitude"
+)
+"pacphase" FLOAT DOUBLE PROP(
+"units" "Deg"
+"description" "Periodic AC analysis phase"
+)
+"m" FLOAT DOUBLE PROP(
+"description" "Multiplicity factor"
+)
+"tc1" FLOAT DOUBLE PROP(
+"units" "1/C"
+"description" "First-order temperature coefficient"
+)
+"tc2" FLOAT DOUBLE PROP(
+"units" "C^-2"
+"description" "Second-order temperature coefficient"
+)
+"tnom" FLOAT DOUBLE PROP(
+"units" "C"
+"description" "Component parameter measurement temperature. Default set by options"
+)
+"trise" FLOAT DOUBLE PROP(
+"units" "C"
+"description" "Temperature rise from ambient"
+)
+"rptstart" INT LONG PROP(
+"description" "The starting bit when repeating. The data repeats from the specified bit to the end of the bit string. The parameter should be an integer from 1 to the length of the bit string"
+)
+"rpttimes" INT LONG PROP(
+"description" "The repeat times. The output maintains the state of the last bit after the last repeat. If its value is negative, the string repeats forever"
+)
+"rjseed" INT LONG PROP(
+"description" "The seed for random number generator, which is used in generating random jitter for PRBS/Bit sources. The default value is 1"
+)
+"seed" INT LONG PROP(
+"description" "This parameter is obsolete, however, is retained for backward compatibility. Set registerlength=[2 ... 32] to choose a Maximum Length Sequence or define a custom PRBS by using the lfsrtaps and lfsrseed parameters"
+)
+"registerlength" INT LONG PROP(
+"description" "When set for PRBS, the registerlength parameter defines the width of the LFSR that works in the Maximum Length Sequence mode. For more information about MLS setting, see the 'PRBS Type Waveform' section"
+)
+"type" INT BYTE PROP(
+"description" "Waveform type"
+)
+"edgetype" INT BYTE PROP(
+"description" "Type of rising and falling edges; effective for pulse, pulse-like piecewise linear, bit, and prbs sources"
+)
+"pwlfilter" INT BYTE PROP(
+"description" "Add filter for pwl source, where the pwl data should be equal space sampled. Possible values are 'nrc'(normal raised cosine filter) and 'none'"
+)
+"allbrkpts" INT BYTE PROP(
+"description" "If set to yes, all the points in the PWL waveform are breakpoints. Default is yes if the number of points is less than 20"
+)
+"modulation" INT BYTE PROP(
+"description" "Type of amplitude modulation; effective for bit and prbs sources"
+)
+"noisetype" INT BYTE PROP(
+"description" "Noisetype parameter specifies the units and source of noise data. When this parameter is set to noisevoltage, the noise data represents the noise spectral density in V^2/Hz of noise measured at the output of a driven circuit. When set to ssbphasenoise, the noise data represents the single-sideband phase noise in dBc measured at the output of a free oscillator.When set to edgephasenoise, the noise data represents the single-sideband phase noise in dBc measured at the output of a driven or oscillator circuit in sampled pnoise/hbnoise jitter analysis. For noisetype=noisevoltage, the frequencies are taken as absolute. For ssbphasenoise and edgephasenoise, the frequencies are offset from the carrier.Note that Noisetype=edgephasenoise is tied to a specific sampling edge position and should be used only for simulating jitter at that given edge position.Noisetype=ssbphasenoise can be used only with pnoise, qpnoise, hbnoise analyses, the noise source will be ignored in transient noise and AC noise analyses"
+)
+"noiseinterp" INT BYTE PROP(
+"description" "Determines how the specified noise data is interpolated. This parameter only applies to noisetype=noisevoltage. When set to linear, interpolation is linear over both axes. When set to loglog, Spectre uses log interpolation over both axes"
+)
+"isnoisy" INT BYTE PROP(
+"description" "Determines whether vsource should generate noise"
+)
+) PROP(
+"key" "inst"
+)
+VALUE
+"I0.M3" "bsim3v3~instparams" (
+2.40000e-05
+5.00000e-07
+8.00000e-12
+6.00000e-12
+2.70000e-05
+1.60000e-11
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+2
+1
+) PROP(
+"model" "cmosp"
+)
+"I0.M4" "bsim3v3~instparams" (
+2.40000e-05
+5.00000e-07
+8.00000e-12
+6.00000e-12
+2.70000e-05
+1.60000e-11
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+2
+1
+) PROP(
+"model" "cmosp"
+)
+"I0.M5" "bsim3v3~instparams" (
+9.60000e-05
+5.00000e-07
+2.60000e-11
+2.40000e-11
+0.000108000
+5.20000e-11
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+1
+1
+) PROP(
+"model" "cmosp"
+)
+"I7.M3" "bsim3v3~instparams" (
+2.40000e-05
+5.00000e-07
+8.00000e-12
+6.00000e-12
+2.70000e-05
+1.60000e-11
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+2
+1
+) PROP(
+"model" "cmosp"
+)
+"I7.M4" "bsim3v3~instparams" (
+2.40000e-05
+5.00000e-07
+8.00000e-12
+6.00000e-12
+2.70000e-05
+1.60000e-11
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+2
+1
+) PROP(
+"model" "cmosp"
+)
+"I7.M5" "bsim3v3~instparams" (
+9.60000e-05
+5.00000e-07
+2.60000e-11
+2.40000e-11
+0.000108000
+5.20000e-11
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+1
+1
+) PROP(
+"model" "cmosp"
+)
+"I0.M1" "bsim3v3~instparams" (
+8.00000e-06
+5.00000e-07
+4.00000e-12
+2.00000e-12
+9.00000e-06
+8.00000e-12
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+2
+1
+) PROP(
+"model" "cmosn"
+)
+"I0.M2" "bsim3v3~instparams" (
+8.00000e-06
+5.00000e-07
+4.00000e-12
+2.00000e-12
+9.00000e-06
+8.00000e-12
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+1
+1
+) PROP(
+"model" "cmosn"
+)
+"I0.M6" "bsim3v3~instparams" (
+3.20000e-05
+5.00000e-07
+1.00000e-11
+8.00000e-12
+3.60000e-05
+2.00000e-11
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+2
+1
+) PROP(
+"model" "cmosn"
+)
+"I0.M7" "bsim3v3~instparams" (
+1.60000e-05
+5.00000e-07
+6.00000e-12
+4.00000e-12
+1.80000e-05
+1.20000e-11
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+2
+1
+) PROP(
+"model" "cmosn"
+)
+"I0.M8" "bsim3v3~instparams" (
+8.00000e-06
+5.00000e-07
+4.00000e-12
+2.00000e-12
+9.00000e-06
+8.00000e-12
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+2
+1
+) PROP(
+"model" "cmosn"
+)
+"I7.M1" "bsim3v3~instparams" (
+8.00000e-06
+5.00000e-07
+4.00000e-12
+2.00000e-12
+9.00000e-06
+8.00000e-12
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+2
+1
+) PROP(
+"model" "cmosn"
+)
+"I7.M2" "bsim3v3~instparams" (
+8.00000e-06
+5.00000e-07
+4.00000e-12
+2.00000e-12
+9.00000e-06
+8.00000e-12
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+1
+1
+) PROP(
+"model" "cmosn"
+)
+"I7.M6" "bsim3v3~instparams" (
+3.20000e-05
+5.00000e-07
+1.00000e-11
+8.00000e-12
+3.60000e-05
+2.00000e-11
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+2
+1
+) PROP(
+"model" "cmosn"
+)
+"I7.M7" "bsim3v3~instparams" (
+1.60000e-05
+5.00000e-07
+6.00000e-12
+4.00000e-12
+1.80000e-05
+1.20000e-11
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+2
+1
+) PROP(
+"model" "cmosn"
+)
+"I7.M8" "bsim3v3~instparams" (
+8.00000e-06
+5.00000e-07
+4.00000e-12
+2.00000e-12
+9.00000e-06
+8.00000e-12
+nan
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+1.00000
+1.00000
+2147483647
+2147483647
+0
+2147483647
+2
+1
+) PROP(
+"model" "cmosn"
+)
+"C0" "capacitor~instparams" (
+1.00000
+nan
+nan
+1.00000
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0
+) PROP(
+"model" "capacitor"
+)
+"C1" "capacitor~instparams" (
+8.80000e-10
+nan
+nan
+1.00000
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0
+) PROP(
+"model" "capacitor"
+)
+"C5" "capacitor~instparams" (
+8.80000e-10
+nan
+nan
+1.00000
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0
+) PROP(
+"model" "capacitor"
+)
+"I0.C0" "capacitor~instparams" (
+3.30000e-10
+nan
+nan
+1.00000
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0
+) PROP(
+"model" "capacitor"
+)
+"I7.C0" "capacitor~instparams" (
+3.30000e-10
+nan
+nan
+1.00000
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0
+) PROP(
+"model" "capacitor"
+)
+"L0" "inductor~instparams" (
+1.00000
+nan
+1.00000
+nan
+nan
+nan
+nan
+nan
+50.0000
+1.00000e+08
+0.00000
+0.00000
+0
+1
+0
+) PROP(
+"model" "inductor"
+)
+"I2" "isource~instparams" (
+0.000100000
+0.00000
+0.00000
+1.00000
+nan
+nan
+nan
+inf
+0.00000
+1.00000
+1.00000
+-1.00000
+0.200000
+-1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0.00000
+1.00000
+0.00000
+nan
+1.00000
+0.00000
+nan
+0.00000
+0.00000
+0.00000
+nan
+0.00000
+0.00000
+0.00000
+0.00000
+nan
+nan
+nan
+nan
+0.00000
+0.00000
+nan
+nan
+nan
+nan
+nan
+nan
+0.00000
+0.00000
+0.00000
+0.00000
+1.00000
+0.00000
+0.00000
+1.00000
+0.00000
+0.00000
+nan
+0.00000
+1
+0
+2147483647
+2147483647
+2147483647
+0
+0
+0
+-1
+0
+0
+0
+1
+) PROP(
+"model" "isource"
+)
+"I6" "isource~instparams" (
+0.000100000
+0.00000
+0.00000
+1.00000
+nan
+nan
+nan
+inf
+0.00000
+1.00000
+1.00000
+-1.00000
+0.200000
+-1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0.00000
+1.00000
+0.00000
+nan
+1.00000
+0.00000
+nan
+0.00000
+0.00000
+0.00000
+nan
+0.00000
+0.00000
+0.00000
+0.00000
+nan
+nan
+nan
+nan
+0.00000
+0.00000
+nan
+nan
+nan
+nan
+nan
+nan
+0.00000
+0.00000
+0.00000
+0.00000
+1.00000
+0.00000
+0.00000
+1.00000
+0.00000
+0.00000
+nan
+0.00000
+1
+0
+2147483647
+2147483647
+2147483647
+0
+0
+0
+-1
+0
+0
+0
+1
+) PROP(
+"model" "isource"
+)
+"R0" "resistor~instparams" (
+1.00000e+07
+nan
+nan
+1.00000
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0
+0
+1
+) PROP(
+"model" "resistor"
+)
+"R2" "resistor~instparams" (
+1.00000e+07
+nan
+nan
+1.00000
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0
+0
+1
+) PROP(
+"model" "resistor"
+)
+"I0.R0" "resistor~instparams" (
+740.000
+nan
+nan
+1.00000
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0
+0
+1
+) PROP(
+"model" "resistor"
+)
+"I7.R0" "resistor~instparams" (
+740.000
+nan
+nan
+1.00000
+1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0
+0
+1
+) PROP(
+"model" "resistor"
+)
+"E0" "vcvs~instparams" (
+1.00000
+0.00000
+1.00000
+0.00000
+nan
+nan
+1.00000
+1.00000
+0.00000
+0.00000
+0.00000
+0
+0
+) PROP(
+"model" "vcvs"
+)
+"V0" "vsource~instparams" (
+1.25000
+0.00000
+0.00000
+1.00000
+nan
+nan
+nan
+inf
+0.00000
+1.00000
+1.00000
+-1.00000
+0.200000
+-1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0.00000
+1.00000
+0.00000
+nan
+1.00000
+0.00000
+nan
+0.00000
+0.00000
+0.00000
+nan
+0.00000
+0.00000
+0.00000
+0.00000
+nan
+nan
+nan
+nan
+0.00000
+0.00000
+nan
+nan
+nan
+nan
+nan
+nan
+0.00000
+0.00000
+0.00000
+0.00000
+1.00000
+0.00000
+0.00000
+1.00000
+0.00000
+0.00000
+nan
+0.00000
+1
+0
+2147483647
+2147483647
+2147483647
+0
+0
+0
+-1
+0
+0
+0
+1
+) PROP(
+"model" "vsource"
+)
+"V1" "vsource~instparams" (
+1.25000
+0.00000
+0.00000
+1.00000
+nan
+nan
+nan
+inf
+0.00000
+1.00000
+1.00000
+-1.00000
+0.200000
+-1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0.00000
+1.00000
+0.00000
+nan
+1.00000
+0.00000
+nan
+0.00000
+0.00000
+0.00000
+nan
+0.00000
+0.00000
+0.00000
+0.00000
+nan
+nan
+nan
+nan
+0.00000
+0.00000
+nan
+nan
+nan
+nan
+nan
+nan
+0.00000
+0.00000
+0.00000
+0.00000
+1.00000
+0.00000
+0.00000
+1.00000
+0.00000
+0.00000
+nan
+0.00000
+1
+0
+2147483647
+2147483647
+2147483647
+0
+0
+0
+-1
+0
+0
+0
+1
+) PROP(
+"model" "vsource"
+)
+"V2" "vsource~instparams" (
+0.00000
+0.00000
+0.00000
+1.00000
+nan
+nan
+nan
+inf
+0.00000
+1.00000
+1.00000
+-1.00000
+0.200000
+-1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0.00000
+1.00000
+0.00000
+nan
+1.00000
+0.00000
+nan
+0.00000
+0.00000
+0.00000
+nan
+0.00000
+0.00000
+0.00000
+0.00000
+nan
+nan
+nan
+nan
+0.00000
+0.00000
+nan
+nan
+nan
+nan
+nan
+nan
+0.00000
+0.00000
+1.00000
+0.00000
+1.00000
+0.00000
+0.00000
+1.00000
+0.00000
+0.00000
+nan
+0.00000
+1
+0
+2147483647
+2147483647
+2147483647
+0
+0
+0
+-1
+0
+0
+0
+1
+) PROP(
+"model" "vsource"
+)
+"V6" "vsource~instparams" (
+0.00000
+0.00000
+0.00000
+1.00000
+nan
+nan
+nan
+inf
+0.00000
+1.00000
+1.00000
+-1.00000
+0.200000
+-1.00000
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+0.00000
+1.00000
+0.00000
+nan
+1.00000
+0.00000
+nan
+0.00000
+0.00000
+0.00000
+nan
+0.00000
+0.00000
+0.00000
+0.00000
+nan
+nan
+nan
+nan
+0.00000
+0.00000
+nan
+nan
+nan
+nan
+nan
+nan
+0.00000
+0.00000
+1.00000
+0.00000
+1.00000
+0.00000
+0.00000
+1.00000
+0.00000
+0.00000
+nan
+0.00000
+1
+0
+2147483647
+2147483647
+2147483647
+0
+0
+0
+-1
+0
+0
+0
+1
+) PROP(
+"model" "vsource"
+)
+END
