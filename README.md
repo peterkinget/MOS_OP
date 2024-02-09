@@ -20,7 +20,7 @@ Usage:
 `MOS_Operating_Point.py <name dcOPInfo.info ascii file> <name
 element.info ascii file> <json file with device name dictionary>`
 
-After a spectre DC Analysis with 'Save Operating Point', spectre will
+After a spectre *DC Analysis* with *Save Operating Point*, spectre will
 save the operating point information in the `dcOPInfo.info` file and the
 transistor sizing information in the `element.info` file in the folder
 with the simulation results; that folder is typically located in `<simulation results folder>/<name of the cell>/spectre/schematic/psf/`. So if you are simulating
@@ -54,20 +54,19 @@ So, for example, the following dictionary names I7.M1, i.e. the M1 device in sub
 ```
 There is are examples in the
 [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) folder:
-e.g., [devices.json](example_files_presized_OTA_tb/devices.json) 
+e.g., [devices.json](example_files_presized_OTA_tb/devices_all.json) 
 
 ## Tools Needed
-- python 3
-
-- numpy, pandas
-
-- psf_utils is a library for python that enables reading the ascii psf
+- `python 3`
+- `numpy`
+- `pandas`
+- `psf_utils` is a library for python that enables reading the ascii psf
   files available from <https://pypi.org/project/psf-utils/>  and can be
   installed with:
   
   `pip install psf-utils` or `pip3 install psf-utils` 
 
-## Example
+## Example Circuit
 
 ![alt text](https://github.com/peterkinget/OP_Sandbox/blob/main/img/presized_OTA.png?raw=true)
 
