@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+</head>
+
+<body>
+
+<h1>OP_Sandbox</h1>
+
+<h2>Basic Usage</h2>
+
+<p>The python script MOS<em>Operating</em>Point.py takes in simulation results from a spectre operating point simulation and tabulates them nicely on the terminal and saves them in a csv file.</p>
+
+<p>Usage: </p>
+
+<p><code>MOS_Operating_Point.py &lt;name dcOPInfo.info ascii file&gt; &lt;name
+element.info ascii file&gt; &lt;json file with device name dictionary&gt;</code></p>
+
+<p>After a spectre DC Analysis with 'Save Operating Point', spectre will
+save the operating point information in the <code>dcOPInfo.info</code> file and the
+transistor sizing information in the <code>element.info</code> file in the folder
+with the simulation results; that folder is typically located in <code>&lt;simulation results folder&gt;/&lt;name of the cell&gt;/spectre/schematic/psf/</code>. So if you are simulating
+<code>presized_OTA_tb</code>  and you save your simulation results in <code>~/simulation</code>,
+you should look in <code>~/simulation/presized_OTA_tb/spectre/schematic/psf/</code>
+after completing the simulation.</p>
+
+<p>These files are typically in binary format. You can convert them to ascii with the <code>psf</code> command from cadence; run:
+<code>
+psf dcOPInfo.info dcOPInfo.info.ascii
+psf element.info element.info.ascii
+</code>
+Those ascii files can be read by the script. There are example files in the <a href="example_files_presized_OTA_tb">example_files_presized_OTA_tb</a> folder. </p>
+
+<p>You further need to make a dictionary of the devices in a json file you want the script to display the operating point. The format is:</p>
+
+<p><code>
+{"device1_label_used_by_script": "spectre_reference_of_device1",
+....
+ "devicen_label_used_by_script": "spectre_reference_of_devicen"}
+</code></p>
+
+<p>So, for example, the following dictionary names I7.M1, i.e. the M1 device in subcircuit I7, as "M1" in the print out and csv file:</p>
+
+<p><code>
+{"M1": "I7.M1",
+ "M2": "I7.M2",
+ "M3": "I7.M3",
+ "M4": "I7.M4",
+ "M5": "I7.M5"}
+</code>
+There is are examples in the
+<a href="example_files_presized_OTA_tb">example_files_presized_OTA_tb</a> folder:
+e.g., <a href="example_files_presized_OTA_tb/devices.json">devices.json</a> </p>
+
+<h2>Tools Needed</h2>
+
+<ul>
+<li><p>python 3</p></li>
+<li><p>numpy, pandas</p></li>
+<li><p>psf_utils is a library for python that enables reading the ascii psf
+files available from <a href="https://pypi.org/project/psf-utils/">https://pypi.org/project/psf-utils/</a>  and can be
+installed with:</p>
+
+<p><code>pip install psf-utils</code> or <code>pip3 install psf-utils</code> </p></li>
+</ul>
+
+<h2>Example</h2>
+
+<p><img src="https://github.com/peterkinget/OP_Sandbox/blob/main/img/presized_OTA.png?raw=true" alt="alt text" title="" /></p>
+
+</body>
+</html>

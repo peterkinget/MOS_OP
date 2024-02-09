@@ -10,6 +10,7 @@
 - check out your terminal  and `operating_point.csv`
 - execute the script with another shorter example: `../MOS_Operating_Point_v0.1d.py dcOpInfo.info.ascii
   element.info.ascii device_names_I0.json`
+- This is the output you should obtain. 
   
 ## Basic Usage
 The python script MOS_Operating_Point.py takes in simulation results from a spectre operating point simulation and tabulates them nicely on the terminal and saves them in a csv file.
