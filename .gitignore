@@ -6,3 +6,5 @@ TRASH/
 older_versions/
 .psf_file
 .psf_*
+*~
+*.html
