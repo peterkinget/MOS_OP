@@ -1,15 +1,14 @@
 # MOS_OP
 
-## Quick Start
+## Quick Demo
 - clone the repository
-- start a terminal
+- start a terminal on a computer with `python3`, `numpy` and `pandas`
 - install `psf_utils` with `pip3 install psf_utils`
 - go into the example files of the repository: `cd example_files_presized_OTA_tb`
-- execute the script with the example files: `../MOS_OP.py dcOpInfo.info.ascii
-  element.info.ascii device_names_all.json`
-- check out your terminal  and `operating_point.csv`
+- execute the script with the example files: `python3 ../MOS_OP.py dcOpInfo.info.ascii  element.info.ascii device_names_all.json`
+- output displayed on your terminal  and saved in `operating_point.csv`
 - execute the script with another shorter example: `../MOS_OP.py dcOpInfo.info.ascii
-  element.info.ascii device_names_I0.json`
+  element.info.ascii device_names_I0.json` producing the following output:
 ```
                   M1b         M2b         M3b         M4b         M5b         M6b         M7b         M8b
 w                8.0u        8.0u       24.0u       24.0u       96.0u       32.0u       16.0u        8.0u
@@ -51,29 +50,37 @@ fug              4.9G        4.9G        1.4G        1.4G        1.6G        5.1
 <!-- - This is the [output](img/example_output.md) you should obtain. -->
   
 ## Basic Usage
-The python script `MOS_Operating_Point.py` takes in simulation results from a spectre operating point simulation and tabulates them nicely on the terminal and saves them in a csv file.
+The python script `MOS_OP.py` takes in simulation results from a spectre
+operating point simulation and tabulates them nicely on the terminal and
+saves them in a csv file.
 
 Usage: 
 
-`MOS_Operating_Point.py <name dcOPInfo.info ascii file> <name
+`python3 MOS_OP.py <name dcOPInfo.info ascii file> <name
 element.info ascii file> <json file with device name dictionary>`
 
-After a spectre *DC Analysis* with *Save Operating Point*, spectre will
-save the operating point information in the `dcOPInfo.info` file and the
+After a spectre *DC Analysis* with *Save Operating Point*, spectre saves
+the operating point information in the `dcOPInfo.info` file and the
 transistor sizing information in the `element.info` file in the folder
-with the simulation results; that folder is typically located in `<simulation results folder>/<name of the cell>/spectre/schematic/psf/`. So if you are simulating
-`presized_OTA_tb`  and you save your simulation results in `~/simulation`,
-you should look in `~/simulation/presized_OTA_tb/spectre/schematic/psf/`
-after completing the simulation.
+with the simulation results; that folder is typically located in
+`<simulation results folder>/<name of the
+cell>/spectre/schematic/psf/`. So if you are simulating
+`presized_OTA_tb` and you ask ADE to save your simulation results in
+`~/simulation`, you should look in
+`~/simulation/presized_OTA_tb/spectre/schematic/psf/` after completing
+the simulation.
 
-These files are typically in binary format. You can convert them to ascii with the `psf` command from cadence; run:
+These files are typically in binary format. You can convert them to
+ascii with the `psf` command from cadence; on a workstation where you
+can execute `virtuoso` you should be able to run:
 ```
 psf dcOPInfo.info dcOPInfo.info.ascii
 psf element.info element.info.ascii
 ```
-Those ascii files can be read by the script. There are example files in the [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) folder. 
+Those ascii files can be read by `MOS_OP.py`. There are example files in the [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) folder. 
 
-You further need to make a dictionary of the devices in a json file you want the script to display the operating point. The format is:
+Next, you need to make a json dictionary of the (subset of the) devices
+you want the script to display the operating point for. The format is:
 
 ```
 {"device1_label_used_by_script": "spectre_reference_of_device1",
@@ -90,9 +97,12 @@ So, for example, the following dictionary names I7.M1, i.e. the M1 device in sub
  "M4": "I7.M4",
  "M5": "I7.M5"}
 ```
-There is are examples in the
+There are examples in the
 [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) folder:
 e.g., [device_names_I0.json](example_files_presized_OTA_tb/device_names_I0.json) 
+
+You do not need to include all devices, you can select devices of
+interest only. 
 
 ## Tools Needed
 - `python 3`
@@ -106,5 +116,14 @@ e.g., [device_names_I0.json](example_files_presized_OTA_tb/device_names_I0.json)
 
 ## Example Circuit
 
-![alt text](https://github.com/peterkinget/OP_Sandbox/blob/main/img/presized_OTA.png?raw=true)
+The simulation example files provided in
+[example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) are
+for a single-ended two-stage Miller OTA with the following schematic. 
+
+![OTASchematic](https://github.com/peterkinget/OP_Sandbox/blob/main/img/presized_OTA.png?raw=true)
+
+Two OTAs have been placed in a testbench:
+
+![TestBenchSchematic](https://github.com/peterkinget/OP_Sandbox/blob/main/img/tb_presized_OTA.png?raw=true)
+
 
