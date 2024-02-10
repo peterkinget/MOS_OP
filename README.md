@@ -5,10 +5,9 @@
 - start a terminal on a computer with `python3`, `numpy` and `pandas`
 - install `psf_utils` with `pip3 install psf_utils`
 - go into the example files of the repository: `cd example_files_presized_OTA_tb`
-- execute the script with the example files: `python3 ../MOS_OP.py dcOpInfo.info.ascii  element.info.ascii device_names_all.json`
-- output displayed on your terminal  and saved in `operating_point.csv`
-- execute the script with another shorter example: `../MOS_OP.py dcOpInfo.info.ascii
-  element.info.ascii device_names_I0.json` producing the following output:
+- execute the script with an example device dictionary file `python3 ../MOS_OP.py dcOpInfo.info.ascii
+  element.info.ascii device_names_I0.json` producing the following
+  output on your terminal and creating a `operating_point.csv`. 
 ```
                   M1b         M2b         M3b         M4b         M5b         M6b         M7b         M8b
 w                8.0u        8.0u       24.0u       24.0u       96.0u       32.0u       16.0u        8.0u
@@ -47,6 +46,8 @@ cmb              1.4f        1.4f        6.6f        6.6f       26.4f        7.1
 cmx              1.6f        1.6f        2.7f        2.7f       10.4f        7.0f        3.4f        1.7f
 fug              4.9G        4.9G        1.4G        1.4G        1.6G        5.1G        4.7G        4.7G
 ```
+- there is another example with more devices: `python3 ../MOS_OP.py dcOpInfo.info.ascii  element.info.ascii device_names_all.json`
+- `operating_point.csv` is overwritten during each execution. 
 
   
 ## Usage
