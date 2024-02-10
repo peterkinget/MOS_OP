@@ -124,6 +124,6 @@ for a single-ended two-stage Miller OTA with the following schematic.
 
 Two OTAs have been placed in a testbench:
 
-![TestBenchSchematic](https://github.com/peterkinget/OP_Sandbox/blob/main/img/tb_presized_OTA.png?raw=true)
+![TestBenchSchematic](https://github.com/peterkinget/OP_Sandbox/blob/main/img/tb_presized_OTA_black.png?raw=true)
 
 
