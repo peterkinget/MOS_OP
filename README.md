@@ -1,14 +1,14 @@
-# OP_Sandbox
+# MOS_OP
 
 ## Quick Start
 - clone the repository
 - start a terminal
 - install `psf_utils` with `pip3 install psf_utils`
 - go into the example files of the repository: `cd example_files_presized_OTA_tb`
-- execute the script with the example files: `../MOS_Operating_Point_v0.1d.py dcOpInfo.info.ascii
+- execute the script with the example files: `../MOS_OP.py dcOpInfo.info.ascii
   element.info.ascii device_names_all.json`
 - check out your terminal  and `operating_point.csv`
-- execute the script with another shorter example: `../MOS_Operating_Point_v0.1d.py dcOpInfo.info.ascii
+- execute the script with another shorter example: `../MOS_OP.py dcOpInfo.info.ascii
   element.info.ascii device_names_I0.json`
 ```
                   M1b         M2b         M3b         M4b         M5b         M6b         M7b         M8b
