@@ -47,7 +47,7 @@ cmb              1.4f        1.4f        6.6f        6.6f       26.4f        7.1
 cmx              1.6f        1.6f        2.7f        2.7f       10.4f        7.0f        3.4f        1.7f
 fug              4.9G        4.9G        1.4G        1.4G        1.6G        5.1G        4.7G        4.7G
 ```
-<!-- - This is the [output](img/example_output.md) you should obtain. -->
+
   
 ## Basic Usage
 The python script `MOS_OP.py` takes in simulation results from a spectre
@@ -110,15 +110,14 @@ interest only.
 - `pandas`
 - `psf_utils` is a library for python that enables reading the ascii psf
   files available from <https://pypi.org/project/psf-utils/>  and can be
-  installed with:
-  
-  `pip install psf-utils` or `pip3 install psf-utils` 
+  installed with:  `pip install psf-utils` or `pip3 install
+  psf-utils`. You need version 1.7 or later. 
 
 ## Example Circuit
 
 The simulation example files provided in
 [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) are
-for a single-ended two-stage Miller OTA with the following schematic. 
+for this single-ended two-stage Miller OTA:
 
 ![OTASchematic](https://github.com/peterkinget/OP_Sandbox/blob/main/img/presized_OTA.png?raw=true)
 
@@ -126,4 +125,13 @@ Two OTAs have been placed in a testbench:
 
 ![TestBenchSchematic](https://github.com/peterkinget/OP_Sandbox/blob/main/img/tb_presized_OTA_black.png?raw=true)
 
+The OTA instances are I0 and I7. Both have the same DC operating
+point. The operating point for the transistors in the I0 instance can be
+obtained with this [device names json
+file](example_files_presized_OTA_tb/device_names_I0.json) with 
+the following [output](img/example_output.md).
+
+The 0.25um CMOS transistor models used for the simulation are available at [Nagendra
+Krishnapura's CAD Tools
+page](https://www.ee.iitm.ac.in/~nagendra/cadinfo.html). 
 
