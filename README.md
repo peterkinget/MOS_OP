@@ -109,15 +109,15 @@ You do not need to include all devices, you can select devices of
 interest only. 
 
 ## Output
-
 The output parameters have their 'usual' meanings and most are taken
 directly from the cadence results. 
 
 Only for the capacitances, the script modifies the cadence output. The
 signs of transcapacitances are converted to the convention in Tsividis'
-MOS book, namely, Cxx = dQx/dVx and Cxy = -dQx/dVy with x <> y; so if
-Cxy were a classical two-terminal capacitor then the sign of the
-capacitance would indeed be positive.
+MOS book, namely, Cxx = dQx/dVx and Cxy = -dQx/dVy with x <> y; so with
+this definition, if Cxy was a classical two-terminal capacitor then the
+sign of the capacitance would indeed be positive. Note that in spectre,
+Cxy = -dQx/dVy for all x and y.
 
 The following transcapacitances are calculated corresponding to
 small-signal model in Fig. 8.5 in Tsividis` MOS book: cm = cdg-cgd, cmb
