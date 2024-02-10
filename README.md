@@ -125,8 +125,10 @@ The simulation example files provided in
 [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) are
 for this single-ended two-stage Miller OTA:
 
-![OTASchematic](https://github.com/peterkinget/OP_Sandbox/blob/main/img/presized_OTA.png
-| width=100)
+<!-- ![OTASchematic](https://github.com/peterkinget/OP_Sandbox/blob/main/img/presized_OTA.png?raw=true) -->
+
+<img
+src="https://github.com/peterkinget/OP_Sandbox/blob/main/img/presized_OTA.png?raw=true" width="750">
 
 Two OTAs have been placed in a testbench:
 
