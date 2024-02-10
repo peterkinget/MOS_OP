@@ -49,7 +49,7 @@ fug              4.9G        4.9G        1.4G        1.4G        1.6G        5.1
 ```
 
   
-## Basic Usage
+## Usage
 The python script `MOS_OP.py` takes in simulation results from a spectre
 operating point simulation and tabulates them nicely on the terminal and
 saves them in a csv file.
@@ -59,11 +59,15 @@ Usage:
 `python3 MOS_OP.py <name dcOPInfo.info ascii file> <name
 element.info ascii file> <json file with device name dictionary>`
 
-After a spectre *DC Analysis* with *Save Operating Point*, spectre saves
-the operating point information in the `dcOPInfo.info` file and the
-transistor sizing information in the `element.info` file in the folder
-with the simulation results; that folder is typically located in
-`<simulation results folder>/<name of the
+The operating point table is printed to *stdout* and is saved in
+`operating_point.csv`; if there is an existing `operating_point.csv`, it
+will be overwritten.  
+
+After a spectre *DC Analysis* with *Save Operating
+Point*, spectre saves the operating point information in the
+`dcOPInfo.info` file and the transistor sizing information in the
+`element.info` file in the folder with the simulation results; that
+folder is typically located in `<simulation results folder>/<name of the
 cell>/spectre/schematic/psf/`. So if you are simulating
 `presized_OTA_tb` and you ask ADE to save your simulation results in
 `~/simulation`, you should look in
@@ -88,21 +92,23 @@ you want the script to display the operating point for. The format is:
  "devicen_label_used_by_script": "spectre_reference_of_devicen"}
 ```
 
-So, for example, the following dictionary names I7.M1, i.e. the M1 device in subcircuit I7, as "M1" in the print out and csv file:
+So, for example, the following dictionary names I0.M1, i.e. the M1 device in subcircuit I0, as "M1b" in the print out and csv file:
 
 ```
-{"M1": "I7.M1",
- "M2": "I7.M2",
- "M3": "I7.M3",
- "M4": "I7.M4",
- "M5": "I7.M5"}
+{"M1b": "I0.M1",
+ "M2b": "I0.M2",
+ "M3b": "I0.M3",
+ "M4b": "I0.M4",
+ "M5b": "I0.M5"}
 ```
-There are examples in the
+There are dictionary examples in the
 [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) folder:
 e.g., [device_names_I0.json](example_files_presized_OTA_tb/device_names_I0.json) 
 
 You do not need to include all devices, you can select devices of
 interest only. 
+
+## Output
 
 ## Tools Needed
 - `python 3`
@@ -119,7 +125,8 @@ The simulation example files provided in
 [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) are
 for this single-ended two-stage Miller OTA:
 
-![OTASchematic](https://github.com/peterkinget/OP_Sandbox/blob/main/img/presized_OTA.png?raw=true)
+![OTASchematic](https://github.com/peterkinget/OP_Sandbox/blob/main/img/presized_OTA.png
+| width=100)
 
 Two OTAs have been placed in a testbench:
 
@@ -129,7 +136,7 @@ The OTA instances are I0 and I7. Both have the same DC operating
 point. The operating point for the transistors in the I0 instance can be
 obtained with this [device names json
 file](example_files_presized_OTA_tb/device_names_I0.json) with 
-the following [output](img/example_output.md).
+the following [output](img/example_output.md) and [csv output](img/operating_point.csv) and 
 
 The 0.25um CMOS transistor models used for the simulation are available at [Nagendra
 Krishnapura's CAD Tools
