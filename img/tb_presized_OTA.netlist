@@ -1,0 +1,72 @@
+// Generated for: spectre
+// Generated on: Feb  9 09:25:23 2024
+// Design library name: 4312_F22
+// Design cell name: presized_OTA_tb_v2
+// Design view name: schematic
+simulator lang=spectre
+global 0
+parameters vin_step=0.1 vindc=0 Cc=330p Clarge=1 Cload=880p Ibias=100u \
+    Ldif=0.5u Lf=0.5u Llarge=1 m1=2 m3=6 m5=24 m6=8 m7=4 m8=2 Rc=740 \
+    Rload=10e6 Vsupply=1.25 Wf=4u
+include "/homes/user/stud/spring20/pk171/Cadence/models/tsmc025.scs"
+
+// Library name: 4312_F22
+// Cell name: presized_OTA
+// View name: schematic
+subckt presized_OTA VDD VSS biasn inn inp out
+    M8 (biasn biasn VSS VSS) cmosn w=Wf*m8 l=Lf as=Wf*Ldif*(1+m8/2) \
+        ad=Wf*Ldif*(m8/2) ps=m8*(Wf+Ldif) pd=(m8+2)*(Wf+Ldif)
+    M7 (comsrc biasn VSS VSS) cmosn w=Wf*m7 l=Lf as=Wf*Ldif*(1+m7/2) \
+        ad=Wf*Ldif*(m7/2) ps=m7*(Wf+Ldif) pd=(m7+2)*(Wf+Ldif)
+    M6 (out biasn VSS VSS) cmosn w=Wf*m6 l=Lf as=Wf*Ldif*(1+m6/2) \
+        ad=Wf*Ldif*(m6/2) ps=m6*(Wf+Ldif) pd=(m6+2)*(Wf+Ldif)
+    M2 (out1n inp comsrc VSS) cmosn w=Wf*m1 l=Lf as=Wf*Ldif*(1+m1/2) \
+        ad=Wf*Ldif*(m1/2) ps=m1*(Wf+Ldif) pd=(m1+2)*(Wf+Ldif)
+    M1 (out1p inn comsrc VSS) cmosn w=Wf*m1 l=Lf as=Wf*Ldif*(1+m1/2) \
+        ad=Wf*Ldif*(m1/2) ps=m1*(Wf+Ldif) pd=(m1+2)*(Wf+Ldif)
+    M5 (out out1n VDD VDD) cmosp w=Wf*m5 l=Lf as=Wf*Ldif*(1+m5/2) \
+        ad=Wf*Ldif*(m5/2) ps=m5*(Wf+Ldif) pd=(m5+2)*(Wf+Ldif)
+    M4 (out1n out1p VDD VDD) cmosp w=Wf*m3 l=Lf as=Wf*Ldif*(1+m3/2) \
+        ad=Wf*Ldif*(m3/2) ps=m3*(Wf+Ldif) pd=(m3+2)*(Wf+Ldif)
+    M3 (out1p out1p VDD VDD) cmosp w=Wf*m3 l=Lf as=Wf*Ldif*(1+m3/2) \
+        ad=Wf*Ldif*(m3/2) ps=m3*(Wf+Ldif) pd=(m3+2)*(Wf+Ldif)
+    R0 (net3 out1n) resistor r=Rc
+    C0 (net3 out) capacitor c=Cc
+ends presized_OTA
+// End of subcircuit definition.
+
+// Library name: 4312_F22
+// Cell name: presized_OTA_tb_v2
+// View name: schematic
+I7 (VDD VSS biasn2 out2 in2 net9) presized_OTA
+I0 (VDD VSS biasn inn_LP net1 out) presized_OTA
+V2 (net1 0) vsource dc=vindc mag=1 phase=0 type=dc
+V1 (0 VSS) vsource dc=Vsupply type=dc
+V0 (VDD 0) vsource dc=Vsupply type=dc
+I6 (VDD biasn2) isource dc=Ibias type=dc
+I2 (VDD biasn) isource dc=Ibias type=dc
+C5 (out2 0) capacitor c=Cload
+C1 (out 0) capacitor c=Cload
+C0 (inn_LP 0) capacitor c=Clarge
+L0 (inn_LP net10) inductor l=Llarge
+R2 (out2 0) resistor r=Rload
+R0 (out 0) resistor r=Rload
+E0 (net10 0 out 0) vcvs gain=1.0
+IPRB1 (net9 out2) iprobe
+V6 (in2 0) vsource dc=vindc type=pwl mag=1 phase=0 wave=[ 0 0 1n \
+        (vin_step) ]
+simulatorOptions options psfversion="1.4.0" reltol=1e-3 vabstol=1e-6 \
+    iabstol=1e-12 temp=27 tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 \
+    maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 \
+    sensfile="../psf/sens.output" checklimitdest=psf 
+tran tran stop=10u errpreset=conservative write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+save out 
+saveOptions options save=allpub currents=all

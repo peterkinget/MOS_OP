@@ -110,6 +110,17 @@ interest only.
 
 ## Output
 
+The output parameters have their 'usual' meanings and most are
+taken directly from the cadence results. Only for the capacitances, the
+script modifies the cadence output. The signs of transcapacitances are
+converted to the convention in Tsividis' MOS book, namely, Cxx = dQx/dVx
+and Cxy = -dQx/dVy with x <> y. The following transcapacitances are
+calculated corresponding to small-signal model in Fig. 8.5 in Tsividis`
+MOS book: cm = cdg-cgd, cmb = cdb-cbd, cmx = cbg-cgb.
+
+See Y. Tsividis and C. McAndrew, Operation and modeling of the MOS
+transistor, 3rd ed. New York: Oxford University Press, 2011.
+
 ## Tools Needed
 - `python 3`
 - `numpy`
@@ -138,7 +149,9 @@ The OTA instances are I0 and I7. Both have the same DC operating
 point. The operating point for the transistors in the I0 instance can be
 obtained with this [device names json
 file](example_files_presized_OTA_tb/device_names_I0.json) with 
-the following [output](img/example_output.md) and [csv output](img/operating_point.csv) and 
+the following [output](img/example_output.md) and [csv
+output](example_files_presized_OTA_tb/operating_point.csv). The output
+contains the transistor sizes which you can also verify from the [netlist](img/tb_presized_OTA.netlist).
 
 The 0.25um CMOS transistor models used for the simulation are available at [Nagendra
 Krishnapura's CAD Tools
