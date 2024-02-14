@@ -175,3 +175,9 @@ and will likely **not** work out of the box on your system.
 `operating_point.csv` and uses approximate analytical expressions to
 compute the performance parameters of the OTA. These are just drafts,
 use at your own risk, the formulas can be wrong. 
+
+## Thanks
+
+Thanks to @KenKundert for updating
+[psf_utils](https://github.com/KenKundert/psf_utils) so it can read the element.info
+files (Dec. 2023). 
