@@ -1,0 +1,11 @@
+{"simulation_dir": ".",
+ "design_name": "example_files_presized_OTA_tb_2",
+ "transistor_names": { "M1b": "I0.M1",
+ "M2b": "I0.M2",
+ "M3b": "I0.M3",
+ "M4b": "I0.M4",
+ "M5b": "I0.M5",
+ "M6b": "I0.M6",
+ "M7b": "I0.M7",
+ "M8b": "I0.M8"}
+}

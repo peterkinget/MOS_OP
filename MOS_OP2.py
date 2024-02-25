@@ -31,6 +31,16 @@ import json
 from psf_utils import PSF
 from inform import Error, display
 ################################################################################
+def do_conversion_to_ascii(file):
+    if os.path.isfile(file+'.ascii'):
+        print(f"ready to read {file}")
+    else:
+        if os.path.isfile(file):
+            print(f"converting {file} to ascii")
+            os.system(f"psf {file} {file}.ascii")
+        else:
+            raise SystemExit(f"{file} does not exist")
+
 def psf_list_signals(psf, beginning=""):
     for signal in psf.all_signals():
         # print(signal.name[0:len(beginning)])
@@ -72,15 +82,21 @@ with open(devicefile) as f:
 config_data = json.loads(json_data)
 
 filepath = os.path.join(config_data['simulation_dir'], config_data['design_name'])
-dcopfile = os.path.join(filepath, "dcOp.dc.ascii")
-elementinfofile = os.path.join(filepath,"element.info.ascii")
+
+dcopfile = os.path.join(filepath, "dcOpInfo.info")
+do_conversion_to_ascii(dcopfile)
+dcopfile = dcopfile + '.ascii'
+
+elementinfofile = os.path.join(filepath,"element.info")
+do_conversion_to_ascii(elementinfofile)
+elementinfofile = elementinfofile + '.ascii'
 
 # read the psf dcop file
 psf = PSF(dcopfile)
 psf_element = PSF(elementinfofile)
 
 # for debugging
-psf_list_signals(psf)
+# psf_list_signals(psf)
 
 # create transistor name dictionaries to go from netlist names to shortcuts and back
 transistor_names_shortcut_to_netlist = config_data['transistor_names']
