@@ -4,6 +4,7 @@
 *.cache
 TRASH/
 old_versions/
+TMP/
 .psf_file
 .psf_*
 *~

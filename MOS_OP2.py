@@ -56,26 +56,34 @@ def cap_sign(cap):
     return cap_sign
 ################################################################################
 # get the commandline parameters
+#
+# switching to a device file that includes all the information
 try:
-    dcopfile = sys.argv[1]
-    elementinfofile = sys.argv[2]
-    devicefile = sys.argv[3]
+#    dcopfile = sys.argv[1]
+#    elementinfofile = sys.argv[2]
+    devicefile = sys.argv[1]
 except IndexError:
-    raise SystemExit(f"Usage: {sys.argv[0]} <name dcOPInfo.info ascii file to process> <name element.info ascii file to process> <json file with device names>")
+    raise SystemExit(f"Usage: {sys.argv[0]} <json file with transistor names and sim. directory>")
+
+# read the config file
+with open(devicefile) as f:
+    json_data = f.read()
+
+config_data = json.loads(json_data)
+
+filepath = os.path.join(config_data['simulation_dir'], config_data['design_name'])
+dcopfile = os.path.join(filepath, "dcOp.dc.ascii")
+elementinfofile = os.path.join(filepath,"element.info.ascii")
 
 # read the psf dcop file
 psf = PSF(dcopfile)
 psf_element = PSF(elementinfofile)
 
 # for debugging
-# psf_list_signals(psf)
+psf_list_signals(psf)
 
-# read the transistor name file
-with open(devicefile) as f:
-    json_data = f.read()
-    
 # create transistor name dictionaries to go from netlist names to shortcuts and back
-transistor_names_shortcut_to_netlist = json.loads(json_data)
+transistor_names_shortcut_to_netlist = config_data['transistor_names']
 transistor_names_shortcuts = transistor_names_shortcut_to_netlist.keys()
 transistor_names_netlist = transistor_names_shortcut_to_netlist.values()
 transistor_names_netlist_to_shortcut = dict(zip(transistor_names_netlist,transistor_names_shortcuts))
