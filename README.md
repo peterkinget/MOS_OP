@@ -1,6 +1,8 @@
 # MOS_OP2
 
-`MOS_OP2.py` has a simpler interface but it has to be run on a machine with access to the cadence `psf` command. `psf_utils` has to be installed in your python3 installation (see below under 'Tools Needed').
+- Browse through **MOS_OP** below first.
+- `MOS_OP2.py` has a simpler interface but it has to be run on a machine with access to the cadence `psf` command. 
+- `psf_utils` has to be installed in your python3 installation (see below under 'Tools Needed').
 
 ## Usage
 - invoke with `python3 ./MOS_OP2.py config_device_names.json` or make `MOS_OP2.py` executable
