@@ -33,7 +33,7 @@ from inform import Error, display
 ################################################################################
 def do_conversion_to_ascii(file):
     if os.path.isfile(file+'.ascii'):
-        print(f"ready to read {file}")
+        print(f"ready to read {file}.ascii")
     else:
         if os.path.isfile(file):
             print(f"converting {file} to ascii")
