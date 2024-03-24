@@ -1,3 +1,36 @@
+# MOS_OP2
+
+- Browse through **MOS_OP** below first.
+- `MOS_OP2.py` has a simpler interface but it has to be run on a machine with access to the cadence `psf` command. 
+- `psf_utils` has to be installed in your python3 installation (see below under 'Tools Needed').
+
+## Usage
+- invoke with `python3 ./MOS_OP2.py config_device_names.json` or make `MOS_OP2.py` executable
+- `device_names.json` now also needs to include the path to the simulation result `dcOpInfo.info` and `element.info` files. 
+- Example `config_device_names.json` for a circuit called *tb_diff_amp*.
+  
+```
+{"simulation_dir": "/workdir/pk171/simulation",
+ "design_name": "presized_OTA_tb/spectre/schematic/psf",
+ "transistor_names": 
+{ "M1b": "I0.M1",
+ "M2b": "I0.M2",
+ "M3b": "I0.M3",
+ "M4b": "I0.M4",
+ "M5b": "I0.M5",
+ "M6b": "I0.M6",
+ "M7b": "I0.M7",
+ "M8b": "I0.M8"}
+}
+```
+- The syntax is largely self-explanatory and based on `MOS_OP` (see below); 
+  - `simulation_dir` needs to point to the simulation directory that cadence ADE is using; 
+  - `design_name` is the path in `simulation_dir` to the folder that contains the `.info` files;
+    - the script will look for the `.info` files in the folder that is the join of `simulation_dir` and `design_name`
+  - `transistor_names` is a dictionary of transistor names and their full schematic names.
+- if the `.info` files are not in ascii, the script will invoke `psf`; make sure it is in your PATH
+- a file `operating_point.csv` is written in the working directory
+
 # MOS_OP
 
 ## Quick Demo
