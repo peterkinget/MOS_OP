@@ -1,5 +1,5 @@
-{"simulation_dir": ".",
- "design_name": "example_files_presized_OTA_tb",
+{"simulation_dir": "/space3/pk171/simulation",
+ "design_name": "presized_OTA_tb/spectre/schematic/psf",
  "transistor_names": { "M1b": "I0.M1",
  "M2b": "I0.M2",
  "M3b": "I0.M3",
