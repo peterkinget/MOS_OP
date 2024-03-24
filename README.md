@@ -10,8 +10,8 @@
 - Example `config_device_names.json` for a circuit called *tb_diff_amp*.
   
 ```
-{"simulation_dir": "/space3/pk171/simulation",
- "design_name": "tb_diff_amp/spectre/schematic/psf",
+{"simulation_dir": "/workdir/pk171/simulation",
+ "design_name": "presized_OTA_tb/spectre/schematic/psf",
  "transistor_names": 
 { "M1b": "I0.M1",
  "M2b": "I0.M2",
