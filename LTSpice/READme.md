@@ -7,13 +7,17 @@
 ## Running the Script
 
 This folder contains the necessary files to run the script:
-`python3 process_LTSpice_OP_v0.2.py Miller_OTA_pin_feedback_OP.log
+```
+python3 process_LTSpice_OP_v0.2.py Miller_OTA_pin_feedback_OP.log
 name_dict.json `
+```
 
-The example is based on the included OTA schematic (see below). To run
-the script you need to save the `.log` file from your `.OP` simulation
+This example is based on the included OTA schematic (see below). To run
+the script you need to save the `.log` file from your LTSpice `.OP` simulation
 and create a `.json` file with a list of the devices you want listed in
-your table printout and their shortened name; see [name_dict.json](./name_dict.json)
+your table printout and their shortened name; see
+[name_dict.json](./name_dict.json); you find the long device names in
+your `.log` file. 
 
 You should get the following output. 
 
