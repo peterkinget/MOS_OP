@@ -52,7 +52,8 @@
 ## Quick Demo
 - clone the repository
 - start a terminal on a computer with `python3`, `numpy` and `pandas`
-- install `psf_utils` with `pip3 install psf_utils`
+- install `psf_utils` with `pip3 install psf_utils` (consider using a
+  virtual environment)
 - go into the example files of the repository: `cd example_files_presized_OTA_tb`
 - execute the script with an example device dictionary file `python3 ../MOS_OP.py dcOpInfo.info.ascii
   element.info.ascii device_names_I0.json` producing the following
