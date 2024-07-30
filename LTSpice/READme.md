@@ -60,7 +60,9 @@ fD        401.1M  400.9M    2.9G    2.9G    3.1G    3.1G    3.1G    3.1G  890.1M
 Wrote CSV file
 ```
 
-## Example Schematic
+## Schematic and LTSpice Files for the Example
+
+![Schematic](./LTSpice/MOSbius/Miller_OTA_pMOS_schematic_example/Miller_OTA_pin_feedback_OP.png)
 
 The LTspice schematic and model files are in the
 [MOSbius_Miller_OTA_pMOS_schematic_example](./MOSbius_Miller_OTA_pMOS_schematic_example)
