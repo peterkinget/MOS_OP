@@ -1,3 +1,19 @@
+# Intro
+
+* Here are a couple of python scripts to process the operating point
+  simulation data and present it in a nice table format. 
+  
+  * The scripts `MOS_OP2` and `MOS_OP` in this main folder are to
+    process simulation data from a cadence Spectre simulation.
+
+* In the [LTSpice](LTSpice) folder you find a script that works with
+  *LTspice* (and likely other *spice3* based simulators like *ngspice*).
+
+* The scripts have been tested with a limited set of models. You might
+  have to make some modifcations if you use different MOS models.
+  
+* Any issues, file an issue through Github.
+
 # MOS_OP2
 
 - Browse through **MOS_OP** below first.
