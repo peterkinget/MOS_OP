@@ -1,4 +1,4 @@
-# LTSpice Example using the a Miller OTA built on the MOSbius chip
+# LTSpice Example using a Miller OTA built on the MOSbius chip
 
 ## Required
 * [spicelib](https://pypi.org/project/spicelib/) 
