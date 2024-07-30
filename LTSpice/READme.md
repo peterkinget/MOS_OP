@@ -1,19 +1,19 @@
 # LTSpice Example using the a Miller OTA built on the MOSbius chip
 
-Required: [spicelib](https://pypi.org/project/spicelib/) and pandas.
+## Required
+* [spicelib](https://pypi.org/project/spicelib/) 
+* pandas
 
-
-The LTspice schematic and model files are in the
-[MOSbius_Miller_OTA_pMOS_schematic_example](./MOSbius_Miller_OTA_pMOS_schematic_example)
-folder. For the operating point, use the `Miller_OTA_pin_feedback.asc`
-schematic. There are other files for various other simulations as well,
-you can ignore them for the purpose of the operating point. After
-running the simulation, make sure to copy the `.log` file. If you close
-LTSpice, the log file gets deleted. 
+## Running the Script
 
 This folder contains the necessary files to run the script:
 `python3 process_LTSpice_OP_v0.2.py Miller_OTA_pin_feedback_OP.log
 name_dict.json `
+
+The example is based on the included OTA schematic (see below). To run
+the script you need to save the `.log` file from your `.OP` simulation
+and create a `.json` file with a list of the devices you want listed in
+your table printout and their shortened name; see [name_dict.json](./name_dict.json)
 
 You should get the following output. 
 
@@ -55,3 +55,14 @@ fT        461.3M  461.3M    3.6G    3.6G    3.8G    3.8G    3.8G    3.8G    1.0G
 fD        401.1M  400.9M    2.9G    2.9G    3.1G    3.1G    3.1G    3.1G  890.1M  768.5M  848.7M
 Wrote CSV file
 ```
+
+## Example Schematic
+
+The LTspice schematic and model files are in the
+[MOSbius_Miller_OTA_pMOS_schematic_example](./MOSbius_Miller_OTA_pMOS_schematic_example)
+folder. For the operating point, use the `Miller_OTA_pin_feedback.asc`
+schematic. There are other files for various other simulations as well,
+you can ignore them for the purpose of the operating point. After
+running the simulation, make sure to copy the `.log` file. If you close
+LTSpice, the log file gets deleted. 
+
