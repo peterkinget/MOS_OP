@@ -8,16 +8,18 @@
 
 This folder contains the necessary files to run the script:
 ```
-python3 process_LTSpice_OP_v0.2.py Miller_OTA_pin_feedback_OP.log
-name_dict.json `
+python3 process_LTSpice_OP_v0.2.py Miller_OTA_pin_feedback_OP.log name_dict.json 
 ```
 
-This example is based on the included OTA schematic (see below). To run
-the script you need to save the `.log` file from your LTSpice `.OP` simulation
-and create a `.json` file with a list of the devices you want listed in
-your table printout and their shortened name; see
-[name_dict.json](./name_dict.json); you find the long device names in
-your `.log` file. 
+This example is based on the included OTA schematic (see below) and uses
+the files saved in this folder. To run the script for your own circuit
+you need to save the `.log` file from your LTSpice `.OP` simulation and
+create a `.json` file with a list of the devices you want listed in your
+table printout and their shortened name; see
+[name_dict.json](./name_dict.json); you find the long transistor names
+in your `.log` file. The script is written to work with BSIM3 models,
+but you can easily modify it for other models or different parameter
+names. 
 
 You should get the following output. 
 
