@@ -62,7 +62,7 @@ Wrote CSV file
 
 ## Schematic and LTSpice Files for the Example
 
-![Schematic](./MOSbius_Miller_OTA_pMOS_schematic_example/Miller_OTA_pin_feedback_OP.png)
+![Schematic](./MOSbius_Miller_OTA_pMOS_schematic_example/operating_point/Miller_OTA_pin_feedback_OP.png)
 
 ![Schematic](./MOSbius_Miller_OTA_pMOS_schematic_example/Miller_OTA_pin_feedback_OP.png) 
 
