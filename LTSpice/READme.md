@@ -64,8 +64,6 @@ Wrote CSV file
 
 ![Schematic](./MOSbius_Miller_OTA_pMOS_schematic_example/operating_point/Miller_OTA_pin_feedback_OP.png)
 
-![Schematic](./MOSbius_Miller_OTA_pMOS_schematic_example/Miller_OTA_pin_feedback_OP.png) 
-
 The LTspice schematic and model files are in the
 [MOSbius_Miller_OTA_pMOS_schematic_example](./MOSbius_Miller_OTA_pMOS_schematic_example)
 folder. For the operating point, use the `Miller_OTA_pin_feedback.asc`
