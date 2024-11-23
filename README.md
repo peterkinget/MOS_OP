@@ -165,11 +165,10 @@ directly from the cadence results.
 
 Only for the capacitances, the script modifies the cadence output. The
 signs of transcapacitances are converted to the convention in Tsividis'
-MOS book, namely, $C_{xx} = \partial Q_x/\partial V_{x}$ and $C_{xy} =
-- \partial Q_x/\partial V_{y}$ with $x\neq y$; so with
-this definition, if $C_{xy}$ was a classical two-terminal capacitor then the
-sign of the capacitance would indeed be positive. Note that in spectre,
-$C_{xy} = \partial Q_x/\partial V_{y}$ for all $x$ and $y$.
+MOS book, namely, $C_{xx} = \partial Q_x/\partial V_{x}$ and $C_{xy} = -\partial Q_x/\partial V_{y}$ when $x\neq y$; so with this definition, if
+$C_{xy}$ was a classical two-terminal capacitor then the sign of the
+capacitance would indeed be positive. Note that in spectre, $C_{xy} =
+\partial Q_x/\partial V_{y}$ for all $x$ and $y$.
 
 The following transcapacitances are calculated corresponding to
 small-signal model in Fig. 8.5 in Tsividis` MOS book: $C_m = C_{dg}-C_{gd}, C_{mb}
