@@ -176,6 +176,15 @@ small-signal model in Fig. 8.5 in Tsividis` MOS book: cm = cdg-cgd, cmb
 
 ![MOS Small Signal Model](img/MOS_ss_model.png)
 
+The current is going to be bigger than , except at very high
+ frequencies; since , those frequencies are beyond the of the
+ transistor. Similarly when , the current due to is typically larger
+ than due to . And, in strong inversion.
+ 
+$$
+\frac{1}{2\pi}
+$$
+
 See Y. Tsividis and C. McAndrew, Operation and modeling of the MOS
 transistor, 3rd ed. New York: Oxford University Press, 2011.
 
