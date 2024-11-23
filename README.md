@@ -174,6 +174,8 @@ The following transcapacitances are calculated corresponding to
 small-signal model in Fig. 8.5 in Tsividis` MOS book: cm = cdg-cgd, cmb
 = cdb-cbd, cmx = cbg-cgb.
 
+![MOS Small Signal Model](img/MOS_ss_model.png)
+
 See Y. Tsividis and C. McAndrew, Operation and modeling of the MOS
 transistor, 3rd ed. New York: Oxford University Press, 2011.
 
