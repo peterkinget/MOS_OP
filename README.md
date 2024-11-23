@@ -174,10 +174,14 @@ The following transcapacitances are calculated corresponding to
 small-signal model in Fig. 8.5 in Tsividis` MOS book: $C_m = C_{dg}-C_{gd}, C_{mb}
 = C_{db}-C_{bd}, C_{mx} = C_{bg}-C_{gb}$.
 
-<center>
 ![MOS Small Signal Model](img/MOS_ss_model.png)
-<p style="text-align:center;">Sample text with center alignment</p>
-</center>
+
+
+<div style="text-align: center;">
+
+![alt text](img/MOS_ss_model.png)
+
+</div>
 
 <figure>
   <img
