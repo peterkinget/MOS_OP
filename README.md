@@ -177,6 +177,7 @@ small-signal model in Fig. 8.5 in Tsividis` MOS book: $C_m = C_{dg}-C_{gd}, C_{m
 | ![MOS Small Signal Model](img/MOS_ss_model.png) | 
 | :---: |
 | Small-signal equivalent model for the **intrinsic part** of the MOS transistor, i.e. not including $C_{js}$, $C_{jd}$, $C_{gs,ovl}$,  $C_{gd,ovl}$, or $C_{gb,ovl}$ |
+| Small-signal equivalent model for the **intrinsic part** of the MOS transistor, i.e. not including `cjs`, `cjd`, `cgsovl` |
 
 *Note:* The current $g_m v_{gs}$ is going to be bigger than $j\omega C_m
 v_{gs}$, except at very high frequencies; since $C_{m} < C_{gs}$, those
