@@ -176,11 +176,13 @@ small-signal model in Fig. 8.5 in Tsividis` MOS book: cm = cdg-cgd, cmb
 
 ![MOS Small Signal Model](img/MOS_ss_model.png)
 
-Note The current $g_m v_{gs}$ is going to be bigger than $j\omega C_m v_{gs}$, except at very high frequencies; since $C_{m} < C_{gs}$, those
-frequencies are beyond the $f_T$ of the transistor. Similarly when
-$v_{bs} \neq 0$, the current due to $g_{mb}$ is typically larger than due to $C_{mb}$. And, $C_{mx} \approx 0$ in strong inversion.
+*Note:* The current $g_m v_{gs}$ is going to be bigger than $j\omega C_m
+v_{gs}$, except at very high frequencies; since $C_{m} < C_{gs}$, those
+frequencies are beyond the $f_T$ of the transistor.  Similarly when
+$v_{bs} \neq 0$, the current due to $g_{mb}$ is typically larger than
+due to $C_{mb}$. And, $C_{mx} \approx 0$ in strong inversion.
 
-See Y. Tsividis and C. McAndrew, Operation and modeling of the MOS
+For more details see Y. Tsividis and C. McAndrew, Operation and modeling of the MOS
 transistor, 3rd ed. New York: Oxford University Press, 2011.
 
 ## Tools Needed
