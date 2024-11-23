@@ -175,6 +175,7 @@ small-signal model in Fig. 8.5 in Tsividis` MOS book: $C_m = C_{dg}-C_{gd}, C_{m
 = C_{db}-C_{bd}, C_{mx} = C_{bg}-C_{gb}$.
 
 ![MOS Small Signal Model](img/MOS_ss_model.png)
+<center><i> Caption </i></center>
 
 *Note:* The current $g_m v_{gs}$ is going to be bigger than $j\omega C_m
 v_{gs}$, except at very high frequencies; since $C_{m} < C_{gs}$, those
