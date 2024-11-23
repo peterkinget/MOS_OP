@@ -178,9 +178,8 @@ small-signal model in Fig. 8.5 in Tsividis` MOS book: $C_m = C_{dg}-C_{gd}, C_{m
 
 
 <div style="text-align: center;">
-
 ![alt text](img/MOS_ss_model.png)
-
+Here comes the caption
 </div>
 
 <figure>
