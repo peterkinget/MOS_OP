@@ -157,7 +157,8 @@ you want the script to display the operating point for. The format is:
 {
   "device1_label_used_by_script": "spectre_reference_of_device1",
 ....
- "devicen_label_used_by_script": "spectre_reference_of_devicen"
+
+  "devicen_label_used_by_script": "spectre_reference_of_devicen"
  }
 ```
 
@@ -166,10 +167,10 @@ So, for example, the following dictionary names I0.M1, i.e. the M1 device in sub
 ```json
 {
   "M1b": "I0.M1",
- "M2b": "I0.M2",
- "M3b": "I0.M3",
- "M4b": "I0.M4",
- "M5b": "I0.M5"
+  "M2b": "I0.M2",
+  "M3b": "I0.M3",
+  "M4b": "I0.M4",
+  "M5b": "I0.M5"
  }
 ```
 > [!NOTE]
