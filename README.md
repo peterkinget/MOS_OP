@@ -28,6 +28,8 @@
 ```
 {"simulation_dir": "/workdir/pk171/simulation",
  "design_name": "presized_OTA_tb/spectre/schematic/psf",
+ "model_type": "bsim3",
+ "abs_ids_min": 0.1e-9,
  "transistor_names": 
 { "M1b": "I0.M1",
  "M2b": "I0.M2",
@@ -42,10 +44,13 @@
 - The syntax is largely self-explanatory and based on `MOS_OP` (see below); 
   - `simulation_dir` needs to point to the simulation directory that cadence ADE is using; 
   - `design_name` is the path in `simulation_dir` to the folder that contains the `.info` files;
-    - the script will look for the `.info` files in the folder that is the join of `simulation_dir` and `design_name`
+  - the script will look for the `.info` files in the folder that is the join of `simulation_dir` and `design_name`
   - `transistor_names` is a dictionary of transistor names and their full schematic names.
-- if the `.info` files are not in ascii, the script will invoke `psf`; make sure it is in your PATH
-- a file `operating_point.csv` is written in the working directory
+  - `model_type` (optional) specifies the MOSFET model type, currently supports "bsim3" (default) or "bsim4"; this option adjusts the naming of some of the parameters, in particular `vgsteff` and the overlap capacitors. 
+  - `abs_ids_min` (optional) specifies the minimum absolute drain current threshold for including transistors in the output (defaults to 0)
+  
+- if the `.info` files are not in ascii, the script will invoke the `psf` command; make sure it is in your PATH
+- files `operating_point.txt`, `operating_point.csv`, and `operating_point.md` are written in the working directory
 
 # MOS_OP
 
@@ -152,6 +157,9 @@ So, for example, the following dictionary names I0.M1, i.e. the M1 device in sub
  "M4b": "I0.M4",
  "M5b": "I0.M5"}
 ```
+> [!WARNING]
+> The file type is different from MOS_OP2. In MOS_OP, you need to provide the actual dcOpInfo.info.ascii and element.info.ascii files along with a device name dictionary as commandline parameters. In contrast, MOS_OP2 only requires a config file that points to where these files are located.
+
 There are dictionary examples in the
 [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) folder:
 e.g., [device_names_I0.json](example_files_presized_OTA_tb/device_names_I0.json) 
@@ -240,4 +248,4 @@ use at your own risk, the formulas can be wrong.
 
 Thanks to @KenKundert for updating
 [psf_utils](https://github.com/KenKundert/psf_utils) so it can read the element.info
-files (Dec. 2023). 
+files (Dec. 2023).

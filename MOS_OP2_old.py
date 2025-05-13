@@ -8,7 +8,6 @@
 # Dec. 2023  v0.1d
 # Feb. 2024  v0.2 --> published on GitHub
 # Feb. 2024  v0.3 --> switching to slimmer interface
-# May  2024  v0.4 --> adding model_type support for BSIM3/BSIM4 compatibility
 # 
 # Reading PSF files from cadence dc operating point simulation
 # 
@@ -32,28 +31,12 @@ import json
 from psf_utils import PSF
 from inform import Error, display
 ################################################################################
-# Define mapping from internal BSIM3 names to external model-specific names
-SIGNAL_NAME_MAPPINGS = {
-    "bsim3": {
-        "vgsteff": "vgsteff",
-        "cgsovl": "cgsovl", 
-        "cgdovl": "cgdovl", 
-        "cgbovl": "cgbovl"
-    },
-    "bsim4": {
-        "vgsteff": "vgt",
-        "cgsovl": "covlgs", 
-        "cgdovl": "covlgd", 
-        "cgbovl": "covlgb"
-    }
-}
-
 def do_conversion_to_ascii(file):
     if os.path.isfile(file+'.ascii'):
-        print(f"Using available ascii {file}.ascii")
+        print(f"ready to read {file}.ascii")
     else:
         if os.path.isfile(file):
-            print(f"Converting {file} to ascii")
+            print(f"converting {file} to ascii")
             os.system(f"psf {file} {file}.ascii")
         else:
             raise SystemExit(f"{file} does not exist")
@@ -64,25 +47,13 @@ def psf_list_signals(psf, beginning=""):
         if (signal.name[0:len(beginning)]==beginning):
             print(signal.name, signal.units)
 
-def collect_transistors_data(psf, transistors, signal_names, model_type="bsim3", tor_signal_separator = '.'): 
+def collect_transistors_data(psf, transistors, signal_names, tor_signal_separator = '.'): 
     transistors_data = {}
     for transistor in transistors:
         transistors_data[transistor] = {}
-        for internal_name in signal_names:
-            # Map internal name to model-specific external name
-            external_name = internal_name
-            
-            # For the special mapped signals, use the model-specific naming
-            if internal_name in SIGNAL_NAME_MAPPINGS.get("bsim3", {}):
-                external_name = SIGNAL_NAME_MAPPINGS[model_type].get(internal_name, internal_name)
-            
-            tor_signal_name = transistor + tor_signal_separator + external_name
-            try:
-                transistors_data[transistor][internal_name] = float(psf.get_signal(tor_signal_name).ordinate)
-            except Exception as e:
-                print(f"Warning: Could not read signal {tor_signal_name}: {e}")
-                transistors_data[transistor][internal_name] = float('nan')
-    
+        for signal in signal_names:
+            tor_signal_name = transistor + tor_signal_separator + signal
+            transistors_data[transistor][signal] = float(psf.get_signal(tor_signal_name).ordinate)
     return transistors_data
 
 # convert signs of transcapacitance to Tsividis convention
@@ -110,14 +81,6 @@ with open(devicefile) as f:
 
 config_data = json.loads(json_data)
 
-# Get model type with fallback to "bsim3" as default
-model_type = config_data.get('model_type', 'bsim3')
-print(f"Using model type: {model_type}")
-
-# Get abs_ids_min cutoff with fallback to previous hardcoded value as default
-abs_ids_min = config_data.get('abs_ids_min', 0)
-print(f"Using minimum absolute current cutoff: {abs_ids_min} A")
-
 filepath = os.path.join(config_data['simulation_dir'], config_data['design_name'])
 
 dcopfile = os.path.join(filepath, "dcOpInfo.info")
@@ -129,9 +92,7 @@ do_conversion_to_ascii(elementinfofile)
 elementinfofile = elementinfofile + '.ascii'
 
 # read the psf dcop file
-print(f"Reading {dcopfile}")
 psf = PSF(dcopfile)
-print(f"Reading {elementinfofile}")
 psf_element = PSF(elementinfofile)
 
 # for debugging
@@ -143,23 +104,21 @@ transistor_names_shortcuts = transistor_names_shortcut_to_netlist.keys()
 transistor_names_netlist = transistor_names_shortcut_to_netlist.values()
 transistor_names_netlist_to_shortcut = dict(zip(transistor_names_netlist,transistor_names_shortcuts))
 
-# parameters to read from the dcop file (using internal BSIM3 names)
+# parameters to read from the dcop file
 signal_names_op = [ 'ids', 'vgs', 'vds', 'vdsat', 'region',
-                    'vbs', 'vth', 'vgsteff',  # Using BSIM3 name (was vgt)
+                    'vbs', 'vth', 'vgsteff', 
                     'gm', 'gds', 'gmb', 'gmoverid', 'self_gain', 
                     'cgg', 'cgs', 'cgd', 'cgb',
                     'csg', 'css', 'csd', 'csb', 
                     'cdg', 'cds', 'cdd', 'cdb', 
                     'cbg', 'cbs', 'cbd', 'cbb',
-                    'cjd', 'cjs', 
-                    'cgsovl', 'cgdovl', 'cgbovl',  # Using BSIM3 names
+                    'cjd', 'cjs', 'cgsovl', 'cgdovl', 'cgbovl',
                     'fug']
 
 # get the data from the psf file and put in a dataframe
 # columns are the parameters
 # rows are the transistors
-print("Processing transistor data")
-transistors_data = collect_transistors_data(psf, transistor_names_netlist_to_shortcut.keys(), signal_names_op, model_type=model_type)
+transistors_data = collect_transistors_data(psf, transistor_names_netlist_to_shortcut.keys(), signal_names_op)
 df = pd.DataFrame(transistors_data).T
 
 # get the data from the psf file and put in a dataframe
@@ -195,45 +154,17 @@ df['cmx'] = df['cbg']-df['cgb']
 # make a list for the desired printing order of the parameters
 element_info_print = ['w', 'l', 'm', 'as', 'ad', 'ps', 'pd']
 signal_names_op_print = [ 'ids', 'vgs', 'vds', 'vdsat', 'region',
-                          'vbs', 'vth', 'vgsteff',  # Using BSIM3 name
+                          'vbs', 'vth', 'vgsteff', 
                           'gm', 'gds', 'gmb', 'gmoverid', 'self_gain', 
-                          'cgs', 'cgsovl', 'cgb', 'cgbovl', 'cgd', 'cgdovl',  # Using BSIM3 names
-                          'cbd', 'cjd', 'cbs', 'cjs',
+                          'cgs', 'cgsovl', 'cgb', 'cgbovl', 'cgd', 'cgdovl',
+                          'cbd', 'cjd', 'cbs' , 'cjs',
                           'csd', 'cm', 'cmb', 'cmx','fug']
-
 # print to the console
-df_to_print = df[[*element_info_print, *signal_names_op_print]]
-
-# Filter devices based on current threshold and report those being filtered out
-current_mask = abs(df['ids']) > abs_ids_min
-filtered_devices = df.index[~current_mask].tolist()
-
-if filtered_devices:
-    print(f"\nThe following devices were excluded (|Ids| < {abs_ids_min} A):")
-    for device in filtered_devices:
-        print(f"  - {device}: Ids = {df.loc[device, 'ids']:.3e} A")
-    print()
-
-df_to_print = df_to_print[current_mask]
-print(df_to_print.T)
+print(df[[*element_info_print, *signal_names_op_print]].T)
+# df[signal_names_op_print].loc[["M1", "M1b"]].T
+# df[signal_names_op_print].T
 
 # write to csv file
 csv_filename = "operating_point.csv"
-print(f"Writing {csv_filename}")
-df_to_print.T.to_csv(csv_filename)
+df[[*element_info_print, *signal_names_op_print]].T.to_csv(csv_filename)
 
-text_filename = "operating_point.txt"
-print(f"Writing {text_filename}")
-with open(text_filename, 'w') as f:
-    f.write(df_to_print.T.to_string())
-
-md_filename = "operating_point.md"
-print(f"Writing {md_filename}")
-
-from pandas.io.formats.format import EngFormatter
-fmt = EngFormatter(accuracy=1, use_eng_prefix=True)
-# apply only to numeric cells
-df_to_print_str = df_to_print.T.map(
-    lambda x: fmt(x) if isinstance(x, (int, float)) else x
-)
-df_to_print_str.to_markdown(md_filename)
