@@ -158,7 +158,7 @@ So, for example, the following dictionary names I0.M1, i.e. the M1 device in sub
  "M5b": "I0.M5"}
 ```
 > [!WARNING]
-> The file type is different from MOS_OP2. In MOS_OP, you need to provide the actual dcOpInfo.info.ascii and element.info.ascii files along with a device name dictionary as commandline parameters. In contrast, MOS_OP2 only requires a config file that points to where these files are located.
+> The device dictionary JSON file format is different between MOS_OP2 and MOS_OP. In MOS_OP, you need to provide the dcOpInfo.info.ascii and element.info.ascii files along with a device name dictionary as commandline parameters. In contrast, MOS_OP2 requires a JSON config file (see above) that points to where these files are located in addition to providing a device name dictionary.
 
 There are dictionary examples in the
 [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) folder:
