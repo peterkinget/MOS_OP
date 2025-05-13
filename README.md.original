@@ -1,39 +1,3 @@
-# MOS_OP - MOS Operating Point Analysis Tools
-
-Tools for analyzing MOS operating point data from Cadence simulations.
-
-## Installation
-
-You can install this package directly from GitHub:
-
-```bash
-pip install git+https://github.com/peterkinget/MOS_OP.git
-```
-
-After installation, you can use the package in two ways:
-
-### As command-line tools
-
-```bash
-# For MOS_OP:
-mos_op <dcop_file> <element_file> <device_file> [--model {bsim3,bsim4}] [--abs_ids_min MIN_CURRENT]
-
-# For MOS_OP2:
-mos_op2 <config_file>
-```
-
-### As Python modules
-
-```python
-from mos_op import mos_op_main, mos_op2_main
-
-# Call the main functions
-mos_op_main()  # Will use command-line arguments
-mos_op2_main() # Will use command-line arguments
-```
-
-You can also run the scripts directly after cloning the repository. The package is set up so that the original script files are symbolic links to the module source files, ensuring there's only one source of truth.
-
 # Intro
 
 * Here are a couple of python scripts to process MOS operating point
@@ -309,16 +273,6 @@ and will likely **not** work out of the box on your system.
 `operating_point.csv` and uses approximate analytical expressions to
 compute the performance parameters of the OTA. These are just drafts,
 use at your own risk, the formulas can be wrong. 
-
-## Development
-
-If you want to contribute to this package, you can clone the repository and install it in development mode:
-
-```bash
-git clone https://github.com/peterkinget/MOS_OP.git
-cd MOS_OP
-pip install -e .
-```
 
 ## Thanks
 

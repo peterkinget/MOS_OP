@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/mos_op/__init__.py
+src/mos_op/mos_op.py
+src/mos_op/mos_op2.py
+src/mos_op.egg-info/PKG-INFO
+src/mos_op.egg-info/SOURCES.txt
+src/mos_op.egg-info/dependency_links.txt
+src/mos_op.egg-info/entry_points.txt
+src/mos_op.egg-info/requires.txt
+src/mos_op.egg-info/top_level.txt

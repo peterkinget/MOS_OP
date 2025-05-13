@@ -1,0 +1,3 @@
+[console_scripts]
+mos_op = mos_op.mos_op:main
+mos_op2 = mos_op.mos_op2:main

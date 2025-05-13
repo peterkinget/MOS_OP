@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mos_op"
+version = "0.4.0"
+description = "MOS Operating Point Analysis Tools"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Peter R. Kinget"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "psf-utils>=1.7.0",
+    "inform",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/peterkinget/MOS_OP"
+"Bug Tracker" = "https://github.com/peterkinget/MOS_OP/issues"
+
+[project.scripts]
+mos_op = "mos_op.mos_op:main"
+mos_op2 = "mos_op.mos_op2:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}

@@ -1,0 +1,17 @@
+include LICENSE
+include README.md
+include pyproject.toml
+
+recursive-include example_files_presized_OTA_tb *
+recursive-include example_files_presized_OTA_tb_2 *
+recursive-include example_files_MOS_OP2 *
+recursive-include img *
+recursive-include LTSpice *
+recursive-include other_jupyter_notebook_examples *.ipynb
+
+global-exclude __pycache__
+global-exclude *.py[cod]
+global-exclude *.so
+global-exclude .DS_Store
+global-exclude *.swp
+global-exclude *.swo
