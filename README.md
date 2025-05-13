@@ -10,6 +10,12 @@ You can install this package directly from GitHub:
 pip install git+https://github.com/peterkinget/MOS_OP.git
 ```
 
+To install from a specific branch (for example, to try new features):
+
+```bash
+pip install git+https://github.com/peterkinget/MOS_OP.git@make_installable
+```
+
 After installation, you can use the package in two ways:
 
 ### As command-line tools
