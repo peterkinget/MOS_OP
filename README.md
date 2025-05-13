@@ -25,20 +25,22 @@
 - `device_names.json` now also needs to include the path to the simulation result `dcOpInfo.info` and `element.info` files. 
 - Example `config_device_names.json` for a circuit called *tb_diff_amp*.
   
-```
-{"simulation_dir": "/workdir/pk171/simulation",
+```json
+{
+  "simulation_dir": "/workdir/pk171/simulation",
  "design_name": "presized_OTA_tb/spectre/schematic/psf",
  "model_type": "bsim3",
  "abs_ids_min": 0.1e-9,
- "transistor_names": 
-{ "M1b": "I0.M1",
+ "transistor_names": {
+ "M1b": "I0.M1",
  "M2b": "I0.M2",
  "M3b": "I0.M3",
  "M4b": "I0.M4",
  "M5b": "I0.M5",
  "M6b": "I0.M6",
  "M7b": "I0.M7",
- "M8b": "I0.M8"}
+ "M8b": "I0.M8"
+  }
 }
 ```
 - The syntax is largely self-explanatory and based on `MOS_OP` (see below); 
@@ -60,9 +62,12 @@
 - install `psf_utils` with `pip3 install psf_utils` (consider using a
   virtual environment)
 - go into the example files of the repository: `cd example_files_presized_OTA_tb`
-- execute the script with an example device dictionary file `python3 ../MOS_OP.py dcOpInfo.info.ascii
-  element.info.ascii device_names_I0.json` producing the following
-  output on your terminal and creating a `operating_point.csv`. 
+- execute the script with an example device dictionary file: 
+  - Basic usage: `python3 ../MOS_OP.py dcOpInfo.info.ascii element.info.ascii device_names_I0.json`
+  - With BSIM4 model: `python3 ../MOS_OP.py dcOpInfo.info.ascii element.info.ascii device_names_I0.json --model bsim4`
+  - With current threshold: `python3 ../MOS_OP.py dcOpInfo.info.ascii element.info.ascii device_names_I0.json --abs_ids_min 1e-9`
+
+  producing the following output on your terminal and creating a `operating_point.csv`. 
 ```
                   M1b         M2b         M3b         M4b         M5b         M6b         M7b         M8b
 w                8.0u        8.0u       24.0u       24.0u       96.0u       32.0u       16.0u        8.0u
@@ -108,16 +113,22 @@ fug              4.9G        4.9G        1.4G        1.4G        1.6G        5.1
 ## Usage
 The python script `MOS_OP.py` takes in simulation results from a spectre
 operating point simulation and tabulates them nicely on the terminal and
-saves them in a csv file.
+saves them in multiple file formats.
 
 Usage: 
 
-`python3 MOS_OP.py <name dcOPInfo.info ascii file> <name
-element.info ascii file> <json file with device name dictionary>`
+`python3 MOS_OP.py <name dcOPInfo.info ascii file> <name element.info ascii file> <json file with device name dictionary> [--model {bsim3|bsim4}] [--abs_ids_min MINIMUM_CURRENT]`
 
-The operating point table is printed to *stdout* and is saved in
-`operating_point.csv`; if there is an existing `operating_point.csv`, it
-will be overwritten.  
+Optional arguments:
+- `--model {bsim3|bsim4}`: Specifies the MOSFET model type (default: bsim3)
+- `--abs_ids_min MINIMUM_CURRENT`: Minimum absolute drain current threshold (in A) for including transistors in the output (default: 0)
+
+The operating point table is printed to *stdout* and is saved in three formats:
+- `operating_point.csv`: Comma-separated values format
+- `operating_point.txt`: Plain text format
+- `operating_point.md`: Markdown table format
+
+If there are existing output files, they will be overwritten.
 
 After a spectre *DC Analysis* with *Save Operating
 Point*, spectre saves the operating point information in the
@@ -157,8 +168,19 @@ So, for example, the following dictionary names I0.M1, i.e. the M1 device in sub
  "M4b": "I0.M4",
  "M5b": "I0.M5"}
 ```
-> [!WARNING]
+> [!NOTE]
 > The device dictionary JSON file format is different between MOS_OP2 and MOS_OP. In MOS_OP, you need to provide the dcOpInfo.info.ascii and element.info.ascii files along with a device name dictionary as commandline parameters. In contrast, MOS_OP2 requires a JSON config file (see above) that points to where these files are located in addition to providing a device name dictionary.
+
+> [!NOTE]  
+> Both scripts now support different MOS models. Use the `--model` parameter (MOS_OP.py) or the `"model_type"` configuration setting (MOS_OP2.py) to specify "bsim3" (default) or "bsim4". This affects parameter names like `vgsteff`/`vgt` and the overlap capacitances.
+
+## Current Thresholding
+Both scripts now support filtering out devices with low current. This is useful for identifying inactive devices.
+
+- In MOS_OP.py: Use the `--abs_ids_min` command-line parameter
+- In MOS_OP2.py: Set the `"abs_ids_min"` value in the configuration file
+
+When a device is filtered out, the scripts will print a message indicating which devices were excluded and their corresponding drain currents.
 
 There are dictionary examples in the
 [example\_files\_presized\_OTA\_tb](example_files_presized_OTA_tb) folder:
@@ -166,6 +188,7 @@ e.g., [device_names_I0.json](example_files_presized_OTA_tb/device_names_I0.json)
 
 You do not need to include all devices, you can select devices of
 interest only. 
+
 
 ## Output
 The output parameters have their 'usual' meanings and most are taken
