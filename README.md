@@ -107,7 +107,7 @@ cmx              1.6f        1.6f        2.7f        2.7f       10.4f        7.0
 fug              4.9G        4.9G        1.4G        1.4G        1.6G        5.1G        4.7G        4.7G
 ```
 - there is another example with more devices: `python3 ../MOS_OP.py dcOpInfo.info.ascii  element.info.ascii device_names_all.json`
-- `operating_point.csv` is overwritten during each execution. 
+- `operating_point.txt`, `operating_point.csv`, and `operating_point.md` are overwritten during each execution. 
 
   
 ## Usage
@@ -171,11 +171,12 @@ So, for example, the following dictionary names I0.M1, i.e. the M1 device in sub
 > [!NOTE]
 > The device dictionary JSON file format is different between MOS_OP2 and MOS_OP. In MOS_OP, you need to provide the dcOpInfo.info.ascii and element.info.ascii files along with a device name dictionary as commandline parameters. In contrast, MOS_OP2 requires a JSON config file (see above) that points to where these files are located in addition to providing a device name dictionary.
 
-> [!NOTE]  
-> Both scripts now support different MOS models. Use the `--model` parameter (MOS_OP.py) or the `"model_type"` configuration setting (MOS_OP2.py) to specify "bsim3" (default) or "bsim4". This affects parameter names like `vgsteff`/`vgt` and the overlap capacitances.
+## Different Transistor Models
+
+Both scripts now support different MOS models. Use the `--model` parameter (MOS_OP.py) or the `"model_type"` configuration setting (MOS_OP2.py) to specify "bsim3" (default) or "bsim4". This affects parameter names like `vgsteff`/`vgt` and the overlap capacitances.
 
 ## Current Thresholding
-Both scripts now support filtering out devices with low current. This is useful for identifying inactive devices.
+Both scripts now support filtering out devices with low current. This is useful for identifying inactive devices<<>>.
 
 - In MOS_OP.py: Use the `--abs_ids_min` command-line parameter
 - In MOS_OP2.py: Set the `"abs_ids_min"` value in the configuration file
@@ -209,7 +210,8 @@ small-signal model in Fig. 8.5 in Tsividis` MOS book: $C_m = C_{dg}-C_{gd}, C_{m
 | :---: |
 | Small-signal equivalent model for the **intrinsic part** of the MOS transistor, i.e. not including `cjs`, `cjd`, `cgsovl`, `cgdovl`, `cgbovl`  |
 
-*Note:* The current $g_m v_{gs}$ is going to be bigger than $j\omega C_m
+> [!NOTE]
+> The current $g_m v_{gs}$ is going to be bigger than $j\omega C_m
 v_{gs}$, except at very high frequencies; since $C_{m} < C_{gs}$, those
 frequencies are beyond the $f_T$ of the transistor.  Similarly when
 $v_{bs} \neq 0$, the current due to $g_{mb}$ is typically larger than
