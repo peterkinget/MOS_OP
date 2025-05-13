@@ -153,20 +153,24 @@ Those ascii files can be read by `MOS_OP.py`. There are example files in the [ex
 Next, you need to make a json dictionary of the (subset of the) devices
 you want the script to display the operating point for. The format is:
 
-```
-{"device1_label_used_by_script": "spectre_reference_of_device1",
+```json
+{
+  "device1_label_used_by_script": "spectre_reference_of_device1",
 ....
- "devicen_label_used_by_script": "spectre_reference_of_devicen"}
+ "devicen_label_used_by_script": "spectre_reference_of_devicen"
+ }
 ```
 
 So, for example, the following dictionary names I0.M1, i.e. the M1 device in subcircuit I0, as "M1b" in the print out and csv file:
 
-```
-{"M1b": "I0.M1",
+```json
+{
+  "M1b": "I0.M1",
  "M2b": "I0.M2",
  "M3b": "I0.M3",
  "M4b": "I0.M4",
- "M5b": "I0.M5"}
+ "M5b": "I0.M5"
+ }
 ```
 > [!NOTE]
 > The device dictionary JSON file format is different between MOS_OP2 and MOS_OP. In MOS_OP, you need to provide the dcOpInfo.info.ascii and element.info.ascii files along with a device name dictionary as commandline parameters. In contrast, MOS_OP2 requires a JSON config file (see above) that points to where these files are located in addition to providing a device name dictionary.
@@ -176,7 +180,7 @@ So, for example, the following dictionary names I0.M1, i.e. the M1 device in sub
 Both scripts now support different MOS models. Use the `--model` parameter (MOS_OP.py) or the `"model_type"` configuration setting (MOS_OP2.py) to specify "bsim3" (default) or "bsim4". This affects parameter names like `vgsteff`/`vgt` and the overlap capacitances.
 
 ## Current Thresholding
-Both scripts now support filtering out devices with low current. This is useful for identifying inactive devices<<>>.
+Both scripts now support filtering out devices with low current. This is useful for identifying inactive devices.
 
 - In MOS_OP.py: Use the `--abs_ids_min` command-line parameter
 - In MOS_OP2.py: Set the `"abs_ids_min"` value in the configuration file
