@@ -121,6 +121,11 @@ def main():
     abs_ids_min = config_data.get('abs_ids_min', 0)
     print(f"Using minimum absolute current cutoff: {abs_ids_min} A")
 
+    # Get precision for printing tables
+    print_precision = config_data.get('print_precision', 2)
+    print(f"Using a print precision of {print_precision} digits")
+    pd.set_eng_float_format(accuracy=print_precision, use_eng_prefix=True)
+
     filepath = os.path.join(config_data['simulation_dir'], config_data['design_name'])
 
     dcopfile = os.path.join(filepath, "dcOpInfo.info")
@@ -234,7 +239,7 @@ def main():
     print(f"Writing {md_filename}")
 
     from pandas.io.formats.format import EngFormatter
-    fmt = EngFormatter(accuracy=1, use_eng_prefix=True)
+    fmt = EngFormatter(accuracy=print_precision, use_eng_prefix=True)
     # apply only to numeric cells
     df_to_print_str = df_to_print.T.map(
         lambda x: fmt(x) if isinstance(x, (int, float)) else x

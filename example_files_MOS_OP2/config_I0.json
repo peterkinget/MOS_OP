@@ -1,5 +1,8 @@
 {"simulation_dir": "/workdir/pk171/simulation",
  "design_name": "presized_OTA_tb/spectre/schematic/psf",
+ "model_type": "bsim3",
+ "abs_ids_min": 0.1e-9,
+ "print_precision": 3,
  "transistor_names": { "M1b": "I0.M1",
  "M2b": "I0.M2",
  "M3b": "I0.M3",
